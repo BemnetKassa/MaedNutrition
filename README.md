@@ -1,6 +1,7 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MAED Nutrition - Landing Page
 
-## Getting Started
+A modern, responsive nutrition and meal-planning SaaS landing page.
+Built with Next.js 15 (App Router), TypeScript, Tailwind CSS, Framer Motion, and Lucide React.
 
 First, run the development server:
 
