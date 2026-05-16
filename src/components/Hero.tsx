@@ -1,128 +1,186 @@
+// hero.tsx
+
 "use client";
 
 import * as React from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Button } from "./Button";
-import { Sparkles, Truck, UtensilsCrossed } from "lucide-react";
-
+import {
+  ClipboardList,
+  Zap,
+  Leaf,
+  ChefHat,
+  Truck,
+} from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#FAFAFA] pt-24 pb-16 md:pt-32 md:pb-24">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
-          {/* Left Side Content */}
+    <section className="relative overflow-hidden bg-[#FAFAFA] pt-24 md:pt-0 pb-8">
+      {/* Mobile background image (behind content) */}
+      <div className="absolute inset-0 z-0 md:hidden">
+        <Image
+          src="/pictures/sofiMain.PNG"
+          alt="MAED Nutrition Hero background"
+          fill
+          priority
+          sizes="100vw"
+          className="object-contain object-top pt-15 opacity-60 "
+        />
+      </div>
+      <div className="relative z-10 mx-auto max-w-362.5 px-4 md:px-6 md:pr-0">
+
+        <div className="grid items-center gap-6 grid-cols-1 md:grid-cols-2">
+          
+          {/* LEFT SIDE */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex flex-col justify-center space-y-8"
+            transition={{ duration: 0.7 }}
+            className="relative z-10"
           >
-            <div className="space-y-4">
-              <h1 className="text-5xl font-extrabold tracking-tight text-[#111111] sm:text-6xl xl:text-7xl">
-                A Smarter Way to Eat.<br />
-                <span className="text-[#3FAE49]">A Better You.</span>
+            
+            {/* Heading */}
+            <div className="max-w-full md:max-w-140">
+              <h1 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[48px] leading-tight font-extrabold tracking-tight text-[#111111]">
+                A Smarter Way to
+                <br />
+                Eat. A Better You.
               </h1>
-              <p className="max-w-[600px] text-lg text-[#6B7280] sm:text-xl leading-relaxed">
-                Personalized meal plans powered by AI.<br />
+
+              <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-[#6B7280]">
+                Personalized meal plans powered by AI.
+                <br />
                 Delivered fresh. Tailored to your goals.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="w-full sm:w-auto text-lg shadow-lg shadow-green-500/20">
-                Get Started
-              </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg">
-                View Sample Menu
-              </Button>
+
+            {/* Cards */}
+            <div className="mt-7 grid gap-4 grid-cols-1 md:grid-cols-2 max-w-full md:max-w-160">
+              
+              {/* Card 1 */}
+              <div className="rounded-3xl border border-[#DDE7DD] bg-white p-5 shadow-sm">
+                
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#EAF7EC]">
+                  <ClipboardList className="h-6 w-6 text-[#3FAE49]" />
+                </div>
+
+                <h3 className="mt-5 text-[18px] font-extrabold leading-tight text-[#3FAE49]">
+                  A. A Meal Plan
+                  <br />
+                  That Works For You
+                </h3>
+
+                <p className="mt-3 text-[14px] leading-relaxed text-[#6B7280]">
+                  Answer a few questions and let AI create the perfect plan for
+                  your goals.
+                </p>
+
+                <Button className="mt-5 h-11 w-full rounded-xl text-[14px] font-semibold">
+                  Start My Assessment
+                </Button>
+              </div>
+
+              {/* Card 2 */}
+              <div className="rounded-3xl border border-[#E5E5E5] bg-white p-5 shadow-sm">
+                
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#EAF7EC]">
+                  <Zap className="h-6 w-6 text-[#3FAE49]" />
+                </div>
+
+                <h3 className="mt-5 text-[18px] font-extrabold leading-tight text-[#111111]">
+                  B. Quick
+                  <br />
+                  Purchase
+                </h3>
+
+                <p className="mt-3 text-[14px] leading-relaxed text-[#6B7280]">
+                  Choose your meals, select a plan, and place your order in
+                  minutes.
+                </p>
+
+                <Button
+                  variant="outline"
+                  className="mt-5 h-11 w-full rounded-xl border-[#DADADA] text-[14px] font-semibold"
+                >
+                  Browse Meals
+                </Button>
+              </div>
             </div>
-            <div className="hidden md:block w-px h-12 bg-gray-200"></div>
 
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 max-w-6xl mx-auto">
-
-              {/* Benefit 1 */}
-              <div className="flex items-center gap-4 flex-1 justify-center">
-                <div className="shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-[#EAF7EC]">
-                  <Sparkles className="h-6 w-6 text-[#3FAE49]" />
+            {/* Bottom Features */}
+            <div className="mt-7 flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center gap-6">
+              
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EAF7EC]">
+                  <Leaf className="h-5 w-5 text-[#3FAE49]" />
                 </div>
+
                 <div>
-                  <h4 className="text-sm font-bold text-[#111111]">100% Clean Ingredients</h4>
-                  <p className="text-xs text-[#6B7280]">No artificial preservatives</p>
+                  <h4 className="text-[14px] font-bold text-[#111111]">
+                    100% Clean Ingredients
+                  </h4>
+
+                  <p className="text-[12px] text-[#6B7280]">
+                    No artificial preservatives
+                  </p>
                 </div>
               </div>
 
-              <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+              <div className="hidden sm:block h-8 w-px bg-[#E5E5E5]" />
 
-              {/* Benefit 2 */}
-              <div className="flex items-center gap-4 flex-1 justify-center">
-                <div className="shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-[#EAF7EC]">
-                  <UtensilsCrossed className="h-6 w-6 text-[#3FAE49]" />
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EAF7EC]">
+                  <ChefHat className="h-5 w-5 text-[#3FAE49]" />
                 </div>
+
                 <div>
-                  <h4 className="text-sm font-bold text-[#111111]">Chef Prepared Meals</h4>
-                  <p className="text-xs text-[#6B7280]">Restaurant quality taste</p>
+                  <h4 className="text-[14px] font-bold text-[#111111]">
+                    Chef Prepared Meals
+                  </h4>
+
+                  <p className="text-[12px] text-[#6B7280]">
+                    Restaurant quality taste
+                  </p>
                 </div>
               </div>
 
-              <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+              <div className="hidden sm:block h-8 w-px bg-[#E5E5E5]" />
 
-              {/* Benefit 3 */}
-              <div className="flex items-center gap-4 flex-1 justify-center">
-                <div className="shrink-0 flex h-12 w-12 items-center justify-center rounded-full bg-[#EAF7EC]">
-                  <Truck className="h-6 w-6 text-[#3FAE49]" />
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EAF7EC]">
+                  <Truck className="h-5 w-5 text-[#3FAE49]" />
                 </div>
+
                 <div>
-                  <h4 className="text-sm font-bold text-[#111111]">Delivered Fresh</h4>
-                  <p className="text-xs text-[#6B7280]">Straight to your door</p>
+                  <h4 className="text-[14px] font-bold text-[#111111]">
+                    Delivered Fresh
+                  </h4>
+
+                  <p className="text-[12px] text-[#6B7280]">
+                    Straight to your door
+                  </p>
                 </div>
               </div>
-
             </div>
           </motion.div>
 
-          {/* Right Side Image Area */}
+          {/* RIGHT SIDE IMAGE */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="relative mx-auto w-full max-w-[520px] lg:max-w-none"
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative hidden h-full md:block"
           >
-            <div className="relative w-full aspect-[3/4] rounded-[32px] overflow-hidden bg-white shadow-2xl border border-[#EAF7EC]">
+            <div className="flex h-105 w-full items-center justify-center md:h-140 lg:h-190">
               <Image
-                src="/pictures/sofi-graphics.PNG"
-                alt="Sofit's Circle Diet hero"
+                src="/pictures/sofiMain.PNG"
+                alt="MAED Nutrition Hero"
                 fill
                 priority
-                className="object-cover"
-                sizes="(max-width: 768px) 90vw, (max-width: 1200px) 45vw, 520px"
+                className="object-contain object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-transparent to-transparent"></div>
             </div>
-
-            {/* Floating Decorative Elements */}
-            <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-5 right-4 bg-white/90 backdrop-blur p-4 rounded-2xl shadow-xl border border-gray-100"
-            >
-              <span className="text-xl font-bold text-[#3FAE49]">100%</span>
-              <br /><span className="text-sm font-medium text-[#6B7280]">Organic</span>
-            </motion.div>
-
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-6 left-4 bg-white/90 backdrop-blur p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3"
-            >
-              <div className="w-10 h-10 rounded-full bg-[#EAF7EC] flex items-center justify-center text-[#3FAE49]">
-                ⚡
-              </div>
-              <div>
-                <div className="font-bold text-[#111111]">AI Powered</div>
-                <div className="text-xs text-[#6B7280]">Perfect Macros</div>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

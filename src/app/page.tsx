@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 px-0 mx-0" >
         <Hero />
         <FeatureCards />
         <Benefits />
