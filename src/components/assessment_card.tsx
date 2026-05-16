@@ -24,6 +24,8 @@ interface AssessmentCardProps {
   onNext?: () => void;
   onBack?: () => void;
   onOptionSelect?: (index: number, option: Option) => void;
+  children?: ReactNode;
+  canProceed?: boolean;
 }
 
 export default function AssessmentCard({
@@ -37,6 +39,7 @@ export default function AssessmentCard({
   onNext,
   onBack,
   onOptionSelect,
+  children,
 }: AssessmentCardProps) {
   const [localOptions, setLocalOptions] = useState<Option[] | undefined>(options);
 
@@ -52,7 +55,7 @@ export default function AssessmentCard({
   }
 
   return (
-    <div className="relative flex h-[760px] w-full max-w-[390px] flex-col overflow-hidden rounded-[32px] border border-[#ECECEC] bg-white p-8 shadow-sm">
+    <div className="relative flex min-h-190 w-full max-w-97.5 flex-col overflow-visible rounded-4xl border border-[#ECECEC] bg-white p-8 shadow-sm">
       
       {/* Header */}
       <div className="flex items-start justify-between">
@@ -76,10 +79,7 @@ export default function AssessmentCard({
         {Array.from({ length: totalSteps }).map((_, i) => (
           <div
             key={i}
-            className={clsx(
-              "h-[6px] flex-1 rounded-full",
-              i < step ? "bg-[#2DBE3F]" : "bg-[#E8E8E8]"
-            )}
+            className={clsx("h-1.5 flex-1 rounded-full", i < step ? "bg-[#2DBE3F]" : "bg-[#E8E8E8]")}
           />
         ))}
       </div>
@@ -95,18 +95,19 @@ export default function AssessmentCard({
         </p>
       </div>
 
-      {/* Options */}
+      {/* Options / Custom content */}
       <div className="mt-10 flex flex-1 flex-col gap-4">
-        {localOptions?.map((option, index) => (
+        {children ? (
+          children
+        ) : (
+          localOptions?.map((option, index) => (
           <button
             key={index}
             type="button"
             onClick={() => handleSelect(index)}
             className={clsx(
-              "flex items-center justify-between rounded-[24px] border p-5 transition-all text-left",
-              option.active
-                ? "border-[#2DBE3F] bg-[#F5FFF6]"
-                : "border-[#ECECEC] bg-white"
+              "flex items-center justify-between rounded-3xl border p-5 transition-all text-left",
+              option.active ? "border-[#2DBE3F] bg-[#F5FFF6]" : "border-[#ECECEC] bg-white"
             )}
           >
             <div className="flex items-center gap-4">
@@ -138,7 +139,8 @@ export default function AssessmentCard({
               {option.active && <div className="h-3 w-3 rounded-full bg-[#2DBE3F]" />}
             </div>
           </button>
-        ))}
+          ))
+        )}
       </div>
 
       {/* Footer */}
@@ -164,8 +166,7 @@ export default function AssessmentCard({
         </button>
       </div>
 
-      {/* Background Shape */}
-      <div className="absolute bottom-[-120px] right-[-100px] h-[280px] w-[280px] rounded-full bg-[#F6FBF7]" />
+      {/* Background Shape removed to prevent overlap with footer buttons */}
     </div>
   );
 }
