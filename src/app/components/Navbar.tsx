@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Leaf } from "lucide-react";
+import Image from "next/image";
 import { Button } from "./Button";
 
 export function Navbar() {
@@ -14,20 +14,16 @@ export function Navbar() {
       <nav className="relative mx-auto flex h-[78px] max-w-350 items-center justify-between rounded-2xl border border-[#E8E8E8] bg-white/95 px-4 md:px-10 py-4 md:py-8 shadow-sm backdrop-blur">
         
         {/* Logo */}
-        <div className="flex items-center gap-2">
-          <div className="flex items-center justify-center rounded-full bg-[#EAF7EC] p-2">
-            <Leaf className="h-5 w-5 text-[#3FAE49]" />
-          </div>
-
-          <div className="leading-none">
-            <h1 className="text-[24px] font-black tracking-tight text-[#3FAE49]">
-              MAED
-            </h1>
-            <p className="-mt-1 text-[11px] font-bold tracking-[0.2em] text-[#111111]">
-              NUTRITION
-            </p>
-          </div>
-        </div>
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/pictures/maed_profile.jpg"
+            alt="MAED Nutrition logo"
+            width={110}
+            height={10}
+            className="object-contain h-auto"
+            priority
+          />
+        </Link>
 
         {/* Nav Links */}
         <div className="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-[#111111]">

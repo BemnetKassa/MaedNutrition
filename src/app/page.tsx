@@ -1,7 +1,12 @@
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { FeatureCards } from "@/components/FeatureCards";
-import { Benefits } from "@/components/Benefits";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { FeatureCards } from "./components/FeatureCards";
+import { Benefits } from "./components/Benefits";
+import HowItWork from "./components/howItWorks";
+import Testimonials from "./components/testimonials";
+import Cta from "./components/cta";
+import MealCategory from "./components/mealCatagory";
+
 
 export default function Home() {
   return (
@@ -14,19 +19,19 @@ export default function Home() {
 
         {/* Placeholders for subsequent sections that we will build next */}
         <section id="plans" className="h-64 flex items-center justify-center bg-gray-50 border-y border-gray-200">
-          <p className="text-gray-500 font-medium">Meal Categories Section (Coming Soon)</p>
+          <MealCategory />
         </section>
 
         <section id="how-it-works" className="h-64 flex items-center justify-center bg-white border-b border-gray-200">
-          <p className="text-gray-500 font-medium">How It Works Section (Coming Soon)</p>
+          <HowItWork />
         </section>
 
         <section className="h-64 flex items-center justify-center bg-gray-50 border-b border-gray-200">
-          <p className="text-gray-500 font-medium">Testimonials Section (Coming Soon)</p>
+          <Testimonials />
         </section>
 
         <section className="h-64 flex items-center justify-center bg-green-50">
-          <p className="text-green-800 font-medium">CTA Section (Coming Soon)</p>
+          <Cta />
         </section>
       </main>
       <footer className="h-32 flex items-center justify-center bg-gray-900 text-white">

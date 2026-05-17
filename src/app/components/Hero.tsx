@@ -24,8 +24,8 @@ export function Hero() {
           alt="MAED Nutrition Hero background"
           fill
           priority
-          sizes="100vw"
-          className="object-contain object-top pt-15 opacity-60 "
+          sizes="(max-width: 767px) 100vw, 50vw"
+          className="object-contain object-top opacity-60"
         />
       </div>
       <div className="relative z-10 mx-auto max-w-362.5 px-4 md:px-6 md:pr-0">
@@ -172,12 +172,13 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="relative hidden h-full md:block"
           >
-            <div className="flex h-105 w-full items-center justify-center md:h-140 lg:h-190">
+            <div className="relative flex h-105 w-full items-center justify-center md:h-140 lg:h-190">
               <Image
                 src="/pictures/sofiMain.PNG"
                 alt="MAED Nutrition Hero"
                 fill
                 priority
+                sizes="(max-width: 767px) 100vw, 50vw"
                 className="object-contain object-center"
               />
             </div>
