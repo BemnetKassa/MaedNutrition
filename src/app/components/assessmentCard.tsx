@@ -43,35 +43,26 @@ export default function AssessmentCard({
   children,
   canProceed,
 }: AssessmentCardProps) {
-  const [localOptions, setLocalOptions] = useState<Option[] | undefined>(options);
-
-  useEffect(() => {
-    setLocalOptions(options);
-  }, [options]);
-
   function handleSelect(index: number) {
-    if (!localOptions) return;
-    const updated = localOptions.map((o, i) => ({ ...o, active: i === index }));
-    setLocalOptions(updated);
-    onOptionSelect?.(index, updated[index]);
+    if (!options) return;
+    onOptionSelect?.(index, options[index]);
   }
 
   return (
-    <div className="relative flex min-h-190 w-full max-w-97.5 flex-col overflow-visible rounded-4xl border border-[#ECECEC] bg-white p-8 shadow-sm">
+    <div className="relative flex min-h-[600px] w-full mx-auto max-w-2xl flex-col overflow-visible rounded-3xl md:rounded-4xl border border-[#ECECEC] bg-white p-6 md:p-10 shadow-lg">
       
       {/* Header */}
-      <div className="flex items-start justify-between">
+      <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-[42px] font-black leading-none tracking-tight text-[#2DBE3F]">
+          <h1 className="text-3xl font-black leading-none tracking-tight text-[#3FAE49]">
             MÁED
           </h1>
-
-          <p className="-mt-1 text-[10px] font-bold tracking-[0.25em] text-[#111111]">
+          <p className="text-[9px] font-bold tracking-[0.25em] text-[#111111]">
             NUTRITION
           </p>
         </div>
 
-        <span className="text-[18px] font-semibold text-[#2DBE3F]">
+        <span className="text-sm md:text-base font-semibold text-[#3FAE49] bg-[#3FAE49]/10 px-3 py-1 rounded-full">
           Step {step} of {totalSteps}
         </span>
       </div>
@@ -85,24 +76,24 @@ export default function AssessmentCard({
             animate={{ opacity: 1, scaleX: i < step ? 1 : 0.9 }}
             transition={{ duration: 0.25, delay: i * 0.03 }}
             style={{ transformOrigin: "left" }}
-            className={clsx("h-1.5 flex-1 rounded-full", i < step ? "bg-[#2DBE3F]" : "bg-[#E8E8E8]")}
+            className={clsx("h-1.5 flex-1 rounded-full", i < step ? "bg-[#3FAE49]" : "bg-[#E8E8E8]")}
           />
         ))}
       </div>
 
       {/* Title */}
       <div className="mt-10">
-        <h2 className="text-[50px] font-black leading-[1.05] tracking-tight text-[#111111]">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black leading-[1.1] tracking-tight text-[#111111]">
           {title}
         </h2>
 
-        <p className="mt-5 text-[21px] leading-relaxed text-[#6B7280]">
+        <p className="mt-4 md:mt-5 text-lg md:text-xl leading-relaxed text-[#6B7280]">
           {description}
         </p>
       </div>
 
       {/* Options / Custom content */}
-      <div className="mt-10 flex flex-1 flex-col gap-4">
+      <div className="mt-8 md:mt-10 flex flex-1 flex-col gap-4">
         <AnimatePresence mode="wait">
           <motion.div
             key={step}
@@ -112,67 +103,69 @@ export default function AssessmentCard({
             transition={{ duration: 0.28 }}
           >
             {children ? (
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}>
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="w-full">
                 {children}
               </motion.div>
             ) : (
-              localOptions?.map((option, index) => (
-                <motion.button
-                  key={index}
-                  type="button"
-                  onClick={() => handleSelect(index)}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
-                  className={clsx(
-                    "flex items-center justify-between rounded-3xl border p-5 transition-all text-left",
-                    option.active ? "border-[#2DBE3F] bg-[#F5FFF6]" : "border-[#ECECEC] bg-white"
-                  )}
-                >
-                  <div className="flex items-center gap-4">
-                    {option.icon && (
-                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#ECFAEE] text-[#2DBE3F]">
-                        {option.icon}
-                      </div>
-                    )}
-
-                    <div>
-                      <h3 className="text-[20px] font-bold leading-tight text-[#111111]">
-                        {option.title}
-                      </h3>
-
-                      {option.subtitle && (
-                        <p className="mt-1 whitespace-pre-line text-[16px] text-[#6B7280]">
-                          {option.subtitle}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-
-                  <div
+              <div className="flex flex-col gap-4">
+                {options?.map((option, index) => (
+                  <motion.button
+                    key={index}
+                    type="button"
+                    onClick={() => handleSelect(index)}
+                    whileHover={{ scale: 1.01 }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 20 }}
                     className={clsx(
-                      "flex h-7 w-7 items-center justify-center rounded-full border-2",
-                      option.active ? "border-[#2DBE3F]" : "border-[#D8D8D8]"
+                      "flex sm:items-center justify-between rounded-2xl border p-4 transition-all text-left gap-4",
+                      option.active ? "border-[#3FAE49] bg-[#F5FFF6] shadow-sm" : "border-[#ECECEC] bg-white hover:border-gray-200 hover:bg-gray-50"
                     )}
                   >
-                    {option.active && <div className="h-3 w-3 rounded-full bg-[#2DBE3F]" />}
-                  </div>
-                </motion.button>
-              ))
+                    <div className="flex sm:items-center gap-4 flex-col sm:flex-row">
+                      {option.icon && (
+                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#ECFAEE] text-[#3FAE49] flex-shrink-0">
+                          {option.icon}
+                        </div>
+                      )}
+
+                      <div>
+                        <h3 className="text-lg md:text-xl font-bold leading-tight text-[#111111]">
+                          {option.title}
+                        </h3>
+
+                        {option.subtitle && (
+                          <p className="mt-1 whitespace-pre-line text-sm md:text-base text-[#6B7280]">
+                            {option.subtitle}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    <div
+                      className={clsx(
+                        "flex h-6 w-6 items-center justify-center rounded-full border-2 flex-shrink-0 self-start sm:self-center",
+                        option.active ? "border-[#3FAE49]" : "border-[#D8D8D8]"
+                      )}
+                    >
+                      {option.active && <div className="h-2.5 w-2.5 rounded-full bg-[#3FAE49]" />}
+                    </div>
+                  </motion.button>
+                ))}
+              </div>
             )}
           </motion.div>
         </AnimatePresence>
       </div>
 
       {/* Footer */}
-      <div className="mt-8 flex items-center gap-4">
+      <div className="mt-10 flex items-center gap-4">
         
         {showBack && (
           <motion.button
             type="button"
             onClick={() => onBack?.()}
             whileTap={{ scale: 0.95 }}
-            className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#ECECEC] bg-white"
+            className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl border border-[#ECECEC] bg-white hover:bg-gray-50 transition-colors"
           >
             <ArrowLeft className="h-6 w-6 text-[#111111]" />
           </motion.button>
@@ -184,16 +177,14 @@ export default function AssessmentCard({
           whileTap={{ scale: canProceed ? 0.98 : 1 }}
           disabled={! (canProceed ?? true)}
           className={clsx(
-            "flex h-16 flex-1 items-center justify-center gap-3 rounded-2xl text-[22px] font-semibold",
-            canProceed ? "bg-[#2DBE3F] text-white" : "bg-[#A7D6A7] text-white/80 pointer-events-none opacity-60"
+            "flex h-14 flex-1 items-center justify-center gap-2 rounded-xl text-lg font-semibold transition-colors",
+            canProceed ? "bg-[#3FAE49] text-white hover:bg-[#36963f] shadow-md" : "bg-[#A7D6A7] text-white/80 pointer-events-none opacity-60"
           )}
         >
           {buttonText}
-          <ArrowRight className="h-6 w-6" />
+          <ArrowRight className="h-5 w-5" />
         </motion.button>
       </div>
-
-      {/* Background Shape removed to prevent overlap with footer buttons */}
     </div>
   );
 }

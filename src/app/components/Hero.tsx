@@ -13,6 +13,7 @@ import {
   ChefHat,
   Truck,
 } from "lucide-react";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -76,9 +77,9 @@ export function Hero() {
                   your goals.
                 </p>
 
-                <Button className="mt-5 h-11 w-full rounded-xl text-[14px] font-semibold">
+                <Link href="/assessment" className="mt-5 flex h-11 w-full items-center justify-center rounded-xl bg-[#3FAE49] text-white shadow-md transition hover:bg-[#36963f] text-[14px] font-semibold">
                   Start My Assessment
-                </Button>
+                </Link>
               </div>
 
               {/* Card 2 */}
@@ -99,12 +100,12 @@ export function Hero() {
                   minutes.
                 </p>
 
-                <Button
-                  variant="outline"
-                  className="mt-5 h-11 w-full rounded-xl border-[#DADADA] text-[14px] font-semibold"
+                <Link
+                  href="/ourMeals"
+                  className="mt-5 flex h-11 w-full items-center justify-center rounded-xl border border-[#DADADA] text-[#3FAE49] transition hover:bg-[#F3FBF4] text-[14px] font-semibold"
                 >
                   Browse Meals
-                </Button>
+                </Link>
               </div>
             </div>
 

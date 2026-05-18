@@ -1,10 +1,19 @@
+"use client";
+
 import { Sparkles, UtensilsCrossed, Truck } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Benefits() {
   return (
-    <section className="bg-white py-16 border-b border-gray-100">
+    <section className="bg-white py-16 border-b border-gray-100 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6 max-w-6xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-6 max-w-6xl mx-auto"
+        >
 
           {/* Benefit 1 */}
           <div className="flex items-center gap-4 flex-1 justify-center">
@@ -43,7 +52,7 @@ export function Benefits() {
             </div>
           </div>
 
-        </div>
+        </motion.div>
       </div>
     </section>
   );

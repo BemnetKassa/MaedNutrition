@@ -17,20 +17,20 @@ export default function Home() {
         <FeatureCards />
         <Benefits />
 
-        {/* Placeholders for subsequent sections that we will build next */}
-        <section id="plans" className="h-64 flex items-center justify-center bg-gray-50 border-y border-gray-200">
+        {/* Main sections */}
+        <section id="plans" className="bg-gray-50 border-y border-gray-200">
           <MealCategory />
         </section>
 
-        <section id="how-it-works" className="h-64 flex items-center justify-center bg-white border-b border-gray-200">
+        <section id="how-it-works" className="bg-white border-b border-gray-200">
           <HowItWork />
         </section>
 
-        <section className="h-64 flex items-center justify-center bg-gray-50 border-b border-gray-200">
+        <section className="bg-gray-50 border-b border-gray-200">
           <Testimonials />
         </section>
 
-        <section className="h-64 flex items-center justify-center bg-green-50">
+        <section className="bg-green-50">
           <Cta />
         </section>
       </main>

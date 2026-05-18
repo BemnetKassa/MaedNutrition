@@ -1,5 +1,9 @@
+"use client";
+
 import { ClipboardCheck, Zap } from "lucide-react";
 import { Button } from "./Button";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export function FeatureCards() {
   return (
@@ -7,7 +11,13 @@ export function FeatureCards() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-5xl grid gap-6 md:grid-cols-2 lg:gap-8 -mt-8 relative z-10">
           {/* Card 1 */}
-          <div className="flex flex-col bg-white rounded-2xl p-8 shadow-md border border-gray-100 transition-transform hover:-translate-y-2 hover:shadow-lg duration-300">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col bg-white rounded-3xl p-8 shadow-md border border-gray-100 transition-transform hover:-translate-y-2 hover:shadow-lg duration-300"
+          >
             <div className="h-12 w-12 rounded-xl bg-[#EAF7EC] flex items-center justify-center mb-6">
               <ClipboardCheck className="h-6 w-6 text-[#3FAE49]" />
             </div>
@@ -17,13 +27,22 @@ export function FeatureCards() {
             <p className="text-[#6B7280] mb-8 flex-1 leading-relaxed">
               Answer a few questions and let AI create the perfect plan for your goals, lifestyle, and dietary preferences.
             </p>
-            <Button size="lg" className="w-full">
+            <Link 
+              href="/assessment" 
+              className="mt-auto flex h-[44px] items-center justify-center rounded-xl bg-[#3FAE49] text-[15px] font-semibold text-white transition hover:bg-[#36963f] shadow-sm w-full"
+            >
               Start My Assessment
-            </Button>
-          </div>
+            </Link>
+          </motion.div>
 
           {/* Card 2 */}
-          <div className="flex flex-col bg-white rounded-2xl p-8 shadow-md border border-gray-100 transition-transform hover:-translate-y-2 hover:shadow-lg duration-300">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col bg-white rounded-3xl p-8 shadow-md border border-gray-100 transition-transform hover:-translate-y-2 hover:shadow-lg duration-300"
+          >
             <div className="h-12 w-12 rounded-xl bg-[#FAFAFA] border border-gray-200 flex items-center justify-center mb-6">
               <Zap className="h-6 w-6 text-[#111111]" />
             </div>
@@ -33,10 +52,13 @@ export function FeatureCards() {
             <p className="text-[#6B7280] mb-8 flex-1 leading-relaxed">
               Choose your meals, select a plan, and place your order in minutes. Perfect for those who know what they want.
             </p>
-            <Button size="lg" variant="outline" className="w-full">
+            <Link 
+              href="/ourMeals" 
+              className="mt-auto flex h-[44px] items-center justify-center rounded-xl border border-[#3FAE49] text-[15px] font-semibold text-[#3FAE49] transition hover:bg-[#F3FBF4] w-full shadow-sm"
+            >
               Browse Meals
-            </Button>
-          </div>
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>
