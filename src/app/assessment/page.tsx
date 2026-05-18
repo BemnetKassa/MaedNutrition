@@ -3,6 +3,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import AssessmentCard from "../components/assessmentCard";
 import { Navbar } from "../components/Navbar";
 
@@ -110,39 +111,8 @@ export default function HomePage() {
       ),
       description: "Take a clear front-facing photo of your body. This helps our AI create a personalized plan for you.",
       buttonText: "Continue",
-      // use children to render custom upload UI
-      children: (
-        <div className="w-full">
-          {/* IMAGE */}
-          <div className="overflow-hidden rounded-[28px] border-2 border-[#3FAE49]">
-            <div className="relative h-64 md:h-96 lg:h-110 w-full bg-gray-100 flex items-center justify-center">
-              <Camera className="h-16 w-16 text-gray-300" />
-
-              {/* CENTER VERTICAL LINE */}
-              <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 border-l-2 border-dashed border-[#3FAE49]" />
-
-              {/* HORIZONTAL LINE 1 */}
-              <div className="absolute left-1/2 top-[46%] h-0.5 w-[60%] -translate-x-1/2 border-t-2 border-dashed border-[#3FAE49]" />
-
-              {/* HORIZONTAL LINE 2 */}
-              <div className="absolute left-1/2 top-[72%] h-0.5 w-[60%] -translate-x-1/2 border-t-2 border-dashed border-[#3FAE49]" />
-            </div>
-          </div>
-
-          {/* ACTION BUTTONS */}
-          <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-4">
-            <button className="flex h-14 md:h-16 flex-1 items-center justify-center gap-3 rounded-2xl bg-[#3FAE49] text-base md:text-[20px] font-semibold text-white transition hover:bg-[#36963f] shadow-sm">
-              <Camera className="h-5 w-5 md:h-6 md:w-6" />
-              Take a Photo
-            </button>
-
-            <button className="flex h-14 md:h-16 flex-1 items-center justify-center gap-3 rounded-2xl border border-[#E5E5E5] bg-white text-base md:text-[20px] font-semibold text-[#3FAE49] transition hover:bg-[#F3FBF4]">
-              <Upload className="h-5 w-5 md:h-6 md:w-6" />
-              Gallery
-            </button>
-          </div>
-        </div>
-      ),
+      // children injected later dynamically
+      children: null,
     },
     {
       title: (
@@ -158,6 +128,8 @@ export default function HomePage() {
   ];
 
   const [index, setIndex] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
 
   // initialize answers from any pre-activated options
   const initialAnswers = baseCards.map((c) => {
@@ -188,6 +160,42 @@ export default function HomePage() {
 
   const totalSteps = 5;
 
+  async function handleSubmit() {
+    setIsSubmitting(true);
+    try {
+      const formData = new FormData();
+      const weight = answers[0]?.weight;
+      const height = answers[0]?.height;
+      const exerciseLevel = answers[1]?.value?.title || "";
+      const goal = answers[2]?.value?.title || "";
+      const image = answers[3]?.file;
+
+      if (weight) formData.append("weight", weight);
+      if (height) formData.append("height", height);
+      if (exerciseLevel) formData.append("exerciseLevel", exerciseLevel);
+      if (goal) formData.append("goal", goal);
+      if (image) formData.append("image", image);
+
+      const res = await fetch("/api/analize", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to analyze");
+      }
+
+      const data = await res.json();
+      localStorage.setItem("assessmentResult", JSON.stringify(data));
+      router.push("/result");
+    } catch (err) {
+      console.error(err);
+      alert("An error occurred while analyzing the data. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   // file upload handler for card 4
   function handleFileUpload(stepIndex: number, file: File | null) {
     if (!file) return setAnswerAt(stepIndex, null);
@@ -195,10 +203,70 @@ export default function HomePage() {
   }
 
   // build final cards array including child UI with handlers
-  const cards = baseCards;
+  const cards = baseCards.map((card, i) => {
+    if (i === 3) {
+      return {
+        ...card,
+        children: (
+          <div className="w-full">
+            {/* IMAGE */}
+            <div className="overflow-hidden rounded-[28px] border-2 border-[#3FAE49]">
+              <div className="relative h-64 md:h-96 lg:h-110 w-full bg-gray-100 flex items-center justify-center overflow-hidden">
+                {answers[3]?.type === "file" && answers[3]?.file ? (
+                  <img 
+                    src={URL.createObjectURL(answers[3].file)} 
+                    alt="Uploaded User Photo" 
+                    className="object-cover w-full h-full" 
+                  />
+                ) : (
+                  <>
+                    <Camera className="h-16 w-16 text-gray-300" />
+                    <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 border-l-2 border-dashed border-[#3FAE49]" />
+                    <div className="absolute left-1/2 top-[46%] h-0.5 w-[60%] -translate-x-1/2 border-t-2 border-dashed border-[#3FAE49]" />
+                    <div className="absolute left-1/2 top-[72%] h-0.5 w-[60%] -translate-x-1/2 border-t-2 border-dashed border-[#3FAE49]" />
+                  </>
+                )}
+              </div>
+            </div>
+
+            {/* ACTION BUTTONS */}
+            <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-4">
+              <label className="flex h-14 md:h-16 flex-1 items-center justify-center gap-3 rounded-2xl bg-[#3FAE49] text-base md:text-[20px] font-semibold text-white transition hover:bg-[#36963f] shadow-sm cursor-pointer">
+                <Camera className="h-5 w-5 md:h-6 md:w-6" />
+                {answers[3]?.type === "file" ? "Retake Photo" : "Take a Photo"}
+                <input 
+                  type="file" 
+                  accept="image/*" 
+                  capture="environment" 
+                  className="hidden" 
+                  onChange={(e) => {
+                    if (e.target.files?.[0]) handleFileUpload(3, e.target.files[0]);
+                  }} 
+                />
+              </label>
+
+              <label className="flex h-14 md:h-16 flex-1 items-center justify-center gap-3 rounded-2xl border border-[#E5E5E5] bg-white text-base md:text-[20px] font-semibold text-[#3FAE49] transition hover:bg-[#F3FBF4] cursor-pointer">
+                <Upload className="h-5 w-5 md:h-6 md:w-6" />
+                {answers[3]?.type === "file" ? "Change Gallery" : "Gallery"}
+                <input 
+                  type="file" 
+                  accept="image/*" 
+                  className="hidden" 
+                  onChange={(e) => {
+                    if (e.target.files?.[0]) handleFileUpload(3, e.target.files[0]);
+                  }} 
+                />
+              </label>
+            </div>
+          </div>
+        )
+      };
+    }
+    return card;
+  });
 
   // determine if current step can proceed: require an answer for options or file steps
-  const canProceed = answers[index] != null || index === 0;
+  const canProceed = (answers[index] != null || index === 0) && !isSubmitting;
 
   return (
 
@@ -214,13 +282,13 @@ export default function HomePage() {
             ...opt,
             active: answers[index]?.type === "option" && answers[index]?.index === i
           }))}
-          buttonText={cards[index].buttonText}
+          buttonText={isSubmitting && index === totalSteps - 1 ? "Analyzing..." : cards[index].buttonText}
           children={cards[index].children}
           canProceed={canProceed}
-          showBack={index > 0}
+          showBack={index > 0 && !isSubmitting}
           onNext={() => {
             if (index === totalSteps - 1) {
-              window.location.href = "/result";
+              handleSubmit();
             } else {
                handleNext();
             }
