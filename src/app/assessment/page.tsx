@@ -163,22 +163,35 @@ export default function HomePage() {
   async function handleSubmit() {
     setIsSubmitting(true);
     try {
-      const formData = new FormData();
       const weight = answers[0]?.weight;
       const height = answers[0]?.height;
       const exerciseLevel = answers[1]?.value?.title || "";
       const goal = answers[2]?.value?.title || "";
       const image = answers[3]?.file;
 
-      if (weight) formData.append("weight", weight);
-      if (height) formData.append("height", height);
-      if (exerciseLevel) formData.append("exerciseLevel", exerciseLevel);
-      if (goal) formData.append("goal", goal);
-      if (image) formData.append("image", image);
+      const buildFormData = () => {
+        const fd = new FormData();
+        if (weight) fd.append("weight", weight);
+        if (height) fd.append("height", height);
+        if (exerciseLevel) fd.append("exerciseLevel", exerciseLevel);
+        if (goal) fd.append("goal", goal);
+        if (image) fd.append("image", image);
+        return fd;
+      };
+
+      // Send to Telegram, but don't block the AI analysis if it fails.
+      try {
+        await fetch("/api/telegram", {
+          method: "POST",
+          body: buildFormData(),
+        });
+      } catch (telegramError) {
+        console.error("Telegram send failed:", telegramError);
+      }
 
       const res = await fetch("/api/analize", {
         method: "POST",
-        body: formData,
+        body: buildFormData(),
       });
 
       if (!res.ok) {
@@ -265,8 +278,10 @@ export default function HomePage() {
     return card;
   });
 
-  // determine if current step can proceed: require an answer for options or file steps
-  const canProceed = (answers[index] != null || index === 0) && !isSubmitting;
+  // determine if current step can proceed: allow the final submit step
+  const canProceed =
+    (answers[index] != null || index === 0 || index === totalSteps - 1) &&
+    !isSubmitting;
 
   return (
 
