@@ -21,7 +21,7 @@ export function Hero() {
       {/* Mobile background image (behind content) */}
       <div className="absolute inset-0 z-0 md:hidden">
         <Image
-          src="/pictures/sofiMain.PNG"
+          src="/pictures/sofiMain.png"
           alt="MAED Nutrition Hero background"
           fill
           priority
@@ -175,7 +175,7 @@ export function Hero() {
           >
             <div className="relative flex h-105 w-full items-center justify-center md:h-140 lg:h-190">
               <Image
-                src="/pictures/sofiMain.PNG"
+                src="/pictures/sofiMain.png"
                 alt="MAED Nutrition Hero"
                 fill
                 priority

@@ -16,7 +16,7 @@ export function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/pictures/maed_profile.jpg"
+            src="/pictures/Maed_profile.jpg"
             alt="MAED Nutrition logo"
             width={110}
             height={10}
