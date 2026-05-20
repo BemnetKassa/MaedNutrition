@@ -90,7 +90,7 @@ export default function ResultPage() {
             Your Personalized <span className="text-[#3FAE49]">Blueprint</span>
           </h1>
           <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
-            Based on your body analysis and goals, we've created a custom roadmap for your fitness journey.
+            Based on your assessment analysis, your nutritionist uses this to build your plan.
           </p>
         </motion.div>
 

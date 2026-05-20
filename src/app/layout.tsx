@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "MAED Nutrition",
-  description: "A Smarter Way to Eat. A Better You. Personalized meal plans powered by AI.",
+  description: "A Smarter Way to Eat. A Better You. AI analyzes your assessment for a nutritionist-led plan.",
 };
 
 export default function RootLayout({

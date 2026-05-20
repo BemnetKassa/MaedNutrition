@@ -91,8 +91,8 @@ export default function MealPlanPage() {
                 </ol>
               </div>
 
-              <div className="relative h-44 w-full overflow-hidden rounded-xl bg-[#F5F5F5]">
-                <Image src="/pictures/sofi3.png" alt="meals" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover" />
+              <div className="relative h-44 w-full overflow-hidden rounded-xl bg-[#c1dfcc]">
+                <Image src="/pictures/Maed_profile.jpg" alt="meals" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover" />
               </div>
             </div>
           </section>

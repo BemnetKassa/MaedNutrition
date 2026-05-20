@@ -25,7 +25,7 @@ export function FeatureCards() {
               A Meal Plan That Works For You
             </h3>
             <p className="text-[#6B7280] mb-8 flex-1 leading-relaxed">
-              Answer a few questions and let AI create the perfect plan for your goals, lifestyle, and dietary preferences.
+              Answer a few questions so our AI can analyze your assessment for a nutritionist who creates your plan.
             </p>
             <Link 
               href="/assessment" 

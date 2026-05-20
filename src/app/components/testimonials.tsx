@@ -48,7 +48,7 @@ export function Testimonials() {
               </div>
 
               <p className="mt-6 text-base leading-relaxed text-[#6B7280]">
-                “The AI meal plans completely changed how I eat. Everything felt personalized and easy to follow.”
+                “The nutritionist plan guided by the AI assessment changed how I eat. Everything felt personalized and easy to follow.”
               </p>
             </motion.div>
           ))}

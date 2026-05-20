@@ -50,7 +50,7 @@ export function Hero() {
               </h1>
 
               <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-[#6B7280]">
-                Personalized meal plans powered by AI.
+                AI analyzes your assessment for a nutritionist-led plan.
                 <br />
                 Delivered fresh. Tailored to your goals.
               </p>
@@ -73,8 +73,8 @@ export function Hero() {
                 </h3>
 
                 <p className="mt-3 text-[14px] leading-relaxed text-[#6B7280]">
-                  Answer a few questions and let AI create the perfect plan for
-                  your goals.
+                  Answer a few questions so our AI can analyze your assessment
+                  for a nutritionist who builds your plan.
                 </p>
 
                 <Link href="/assessment" className="mt-5 flex h-11 w-full items-center justify-center rounded-xl bg-[#3FAE49] text-white shadow-md transition hover:bg-[#36963f] text-[14px] font-semibold">

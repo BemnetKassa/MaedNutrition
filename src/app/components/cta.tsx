@@ -21,8 +21,8 @@ const cta = () => (
     </h2>
 
     <p className="mx-auto mt-8 max-w-175 text-lg md:text-xl leading-relaxed text-white/80">
-      Get personalized meal plans powered by AI and designed
-      specifically for your body and goals.
+      Get personalized meal plans built by a nutritionist and guided
+      by AI assessment analysis for your body and goals.
     </p>
 
     <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

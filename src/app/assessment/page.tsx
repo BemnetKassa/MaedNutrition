@@ -188,7 +188,7 @@ export default function HomePage() {
           <span className="text-[#3FAE49]">well-lit photo</span>
         </>
       ),
-      description: "Take a clear front-facing photo of your body. This helps our AI create a personalized plan for you.",
+      description: "Take a clear front-facing photo of your body. This helps our AI analyze your assessment for the nutritionist.",
       buttonText: "Continue",
       // children injected later dynamically
       children: null,
@@ -214,7 +214,7 @@ export default function HomePage() {
           <span className="text-[#3FAE49]">Ready to get your plan?</span>
         </>
       ),
-      description: "We’ll analyze your info and generate a personalized meal plan.",
+      description: "We’ll analyze your info for our nutritionist to prepare your plan.",
       buttonText: "Finish",
     },
   ];

@@ -26,8 +26,8 @@ export default function HowItWork() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-175 text-lg leading-relaxed text-[#6B7280]">
-            We use AI and nutrition science to create the perfect meal plan
-            tailored specifically for your body and lifestyle.
+            We use AI to analyze your assessment so our nutritionist can craft
+            a plan tailored to your body and lifestyle.
           </p>
         </motion.div>
 
@@ -41,8 +41,8 @@ export default function HowItWork() {
             },
             {
               step: "02",
-              title: "AI Creates Your Plan",
-              desc: "Our AI builds a personalized meal plan tailored to your needs.",
+              title: "AI Analysis + Nutritionist Plan",
+              desc: "AI analyzes your assessment and a nutritionist creates your plan.",
             },
             {
               step: "03",
