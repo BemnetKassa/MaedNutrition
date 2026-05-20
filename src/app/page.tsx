@@ -6,6 +6,7 @@ import HowItWork from "./components/howItWorks";
 import Testimonials from "./components/testimonials";
 import Cta from "./components/cta";
 import MealCategory from "./components/mealCatagory";
+import { Footer } from "./components/footer";
 
 
 export default function Home() {
@@ -34,9 +35,7 @@ export default function Home() {
           <Cta />
         </section>
       </main>
-      <footer className="h-32 flex items-center justify-center bg-gray-900 text-white">
-        <p className="font-medium">Footer (Coming Soon)</p>
-      </footer>
+      <Footer />
     </>
   );
 }

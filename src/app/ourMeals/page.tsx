@@ -146,7 +146,7 @@ export default function OurMealsPage() {
 							<div className="overflow-hidden rounded-[36px] border border-[#E8E8E8] bg-white p-4 shadow-[0_20px_60px_rgba(17,17,17,0.08)]">
 								<div className="relative aspect-4/5 overflow-hidden rounded-4xl bg-[#F5F5F5]">
 									<Image
-										src="/pictures/meal-breakdown.avif"
+										src="/pictures/DSC00653.webp"
 										alt="MAED Nutrition meal preview"
 										fill
 										priority
