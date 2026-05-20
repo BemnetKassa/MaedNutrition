@@ -70,7 +70,15 @@ Do not provide medical advice.
       .replace(/```/g, "")
       .trim();
 
-    return NextResponse.json(JSON.parse(cleaned || "{}"));
+    try {
+      return NextResponse.json(JSON.parse(cleaned || "{}"));
+    } catch (parseError) {
+      console.error("Failed to parse Gemini response:", cleaned, parseError);
+      return NextResponse.json(
+        { error: "Invalid AI response", raw: cleaned || null },
+        { status: 502 }
+      );
+    }
   } catch (error) {
     console.error(error);
 

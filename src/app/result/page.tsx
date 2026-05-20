@@ -21,6 +21,7 @@ interface AssessmentData {
 
 export default function ResultPage() {
   const [data, setData] = useState<AssessmentData | null>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem("assessmentResult");
@@ -31,15 +32,40 @@ export default function ResultPage() {
         console.error(e);
       }
     }
+    setLoaded(true);
   }, []);
 
-  if (!data) {
+  if (!loaded) {
     return (
       <main className="bg-[#FAFAFA] min-h-screen">
         <Navbar />
         <div className="pt-32 pb-16 px-6 lg:px-8 max-w-7xl mx-auto text-center flex flex-col items-center justify-center min-h-[60vh]">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#3FAE49] mb-4"></div>
           <h1 className="text-3xl font-bold text-[#111111]">Loading Your Results...</h1>
+        </div>
+      </main>
+    );
+  }
+
+  if (!data) {
+    return (
+      <main className="bg-[#FAFAFA] min-h-screen">
+        <Navbar />
+        <div className="pt-32 pb-16 px-6 lg:px-8 max-w-4xl mx-auto text-center">
+          <span className="inline-block py-1 px-3 rounded-full bg-[#E5F5E6] text-[#3FAE49] text-sm font-semibold mb-4 text-center">
+            Payment Received
+          </span>
+          <h1 className="text-3xl md:text-4xl font-bold text-[#111111]">We’re reviewing your payment</h1>
+          <p className="mt-4 text-gray-600 text-lg">
+            Thanks for submitting your receipt. We’ll verify your payment and send your plan shortly.
+          </p>
+          <div className="mt-8">
+            <Link href="/mealPlan">
+              <Button className="mx-auto flex items-center gap-2 px-8 py-4 text-lg">
+                View Meal Plan Options <ArrowRight className="h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </main>
     );
