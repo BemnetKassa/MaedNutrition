@@ -90,7 +90,7 @@ export default function HowItWorksPage() {
             </div>
 
             <div className="relative h-64 w-full overflow-hidden rounded-2xl bg-[#F5F5F5]">
-              <Image src="/pictures/sofi4.webp" alt="how it works" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover" />
+              <Image src="/pictures/maed_logo.jpg" alt="how it works" fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover" />
             </div>
           </section>
         </section>
