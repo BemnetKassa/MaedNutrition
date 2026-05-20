@@ -17,19 +17,19 @@ const meals = [
 		title: "Weight Loss",
 		description:
 			"Balanced meals with lean protein, high fiber, and calorie-aware portions.",
-		image: "/pictures/meal-breakdown.avif",
+		image: "/pictures/DSC00725.webp",
 	},
 	{
 		title: "Muscle Gain",
 		description:
 			"Higher protein meals designed to support recovery, strength, and performance.",
-		image: "/pictures/portion-guide.png",
+		image: "/pictures/DSC00730.webp",
 	},
 	{
 		title: "Clean Eating",
 		description:
 			"Simple, fresh ingredients with no unnecessary extras and lots of flavor.",
-		image: "/pictures/nutrition-info.png",
+		image: "/pictures/DSC00749.webp",
 	},
 ];
 
