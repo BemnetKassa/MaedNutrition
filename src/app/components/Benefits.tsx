@@ -1,6 +1,6 @@
 "use client";
 
-import { Sparkles, UtensilsCrossed, Truck } from "lucide-react";
+import { CalendarDays, Target, LineChart } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Benefits() {
@@ -18,11 +18,11 @@ export function Benefits() {
           {/* Benefit 1 */}
           <div className="flex items-center gap-4 flex-1 justify-center">
             <div className="shrink-0 flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF7EC]">
-              <Sparkles className="h-6 w-6 text-[#3FAE49]" />
+              <CalendarDays className="h-6 w-6 text-[#3FAE49]" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-[#111111]">100% Clean Ingredients</h4>
-              <p className="text-sm text-[#6B7280]">No artificial preservatives</p>
+              <h4 className="text-base font-bold text-[#111111]">90-Day Structure</h4>
+              <p className="text-sm text-[#6B7280]">Clear phases and milestones</p>
             </div>
           </div>
 
@@ -31,11 +31,11 @@ export function Benefits() {
           {/* Benefit 2 */}
           <div className="flex items-center gap-4 flex-1 justify-center">
             <div className="shrink-0 flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF7EC]">
-              <UtensilsCrossed className="h-6 w-6 text-[#3FAE49]" />
+              <Target className="h-6 w-6 text-[#3FAE49]" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-[#111111]">Chef Prepared Meals</h4>
-              <p className="text-sm text-[#6B7280]">Restaurant quality taste</p>
+              <h4 className="text-base font-bold text-[#111111]">Goal-Based Targets</h4>
+              <p className="text-sm text-[#6B7280]">Personalized for your outcome</p>
             </div>
           </div>
 
@@ -44,11 +44,11 @@ export function Benefits() {
           {/* Benefit 3 */}
           <div className="flex items-center gap-4 flex-1 justify-center">
             <div className="shrink-0 flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF7EC]">
-              <Truck className="h-6 w-6 text-[#3FAE49]" />
+              <LineChart className="h-6 w-6 text-[#3FAE49]" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-[#111111]">Delivered Fresh</h4>
-              <p className="text-sm text-[#6B7280]">Straight to your door</p>
+              <h4 className="text-base font-bold text-[#111111]">Progress Tracking</h4>
+              <p className="text-sm text-[#6B7280]">See momentum week by week</p>
             </div>
           </div>
 

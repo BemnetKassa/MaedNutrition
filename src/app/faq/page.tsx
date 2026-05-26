@@ -7,24 +7,24 @@ import { Navbar } from "../components/Navbar";
 
 const faqs = [
   {
-    question: "How does the MAED Nutrition subscription work?",
-    answer: "You choose your meal plan size (4, 6, 8, or 10 meals per week), select your meals from our weekly rotating menu, and we deliver them fresh to your door. You can pause, skip a week, or cancel anytime from your account settings."
+    question: "How does the Sofi Circle Diet subscription work?",
+    answer: "You complete a short assessment, then we build a single 90-day plan with weekly targets and check-ins. You follow the plan and review progress at day 30, 60, and 90."
   },
   {
-    question: "Are the meals frozen?",
-    answer: "No! All our meals are delivered fresh and chilled, never frozen. We prepare them just hours before delivery to ensure maximum flavor, texture, and nutritional value."
+    question: "What is included in the 90-day plan?",
+    answer: "A personalized roadmap, weekly targets, and progress reviews so you always know what to focus on next."
   },
   {
-    question: "How long do the meals last in the fridge?",
-    answer: "Our meals are designed to stay fresh for 5-7 days in the refrigerator. Each meal comes with a specific enjoy-by date clearly marked on its label."
+    question: "Can I start any time?",
+    answer: "Yes. You can enroll whenever you are ready, and your 90-day timeline starts on your chosen start date."
   },
   {
-    question: "Do you cater to specific dietary requirements?",
-    answer: "Yes, we offer a variety of options including high-protein, low-carb, vegetarian, and dairy-free meals. You can easily filter the menu each week based on your unique nutritional preferences and goals."
+    question: "Do I need to follow a strict menu?",
+    answer: "No. The plan focuses on targets and structure rather than a fixed menu, so it can fit your lifestyle."
   },
   {
-    question: "How do I heat up the meals?",
-    answer: "Our meals are microwave-ready. Simply crack the corner of the lid and heat for 2-3 minutes depending on your microwave wattage. You can also transfer the food to an oven-safe dish and heat at 350°F for 10-15 minutes."
+    question: "How do I track progress during the plan?",
+    answer: "You will review your progress weekly and at key milestones on days 30, 60, and 90."
   }
 ];
 

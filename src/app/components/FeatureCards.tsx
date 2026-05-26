@@ -22,10 +22,11 @@ export function FeatureCards() {
               <ClipboardCheck className="h-6 w-6 text-[#3FAE49]" />
             </div>
             <h3 className="text-2xl font-extrabold text-[#111111] mb-3">
-              A Meal Plan That Works For You
+              A 90-Day Plan That Works For You
             </h3>
             <p className="text-[#6B7280] mb-8 flex-1 leading-relaxed">
-              Answer a few questions so our AI can analyze your assessment for a nutritionist who creates your plan.
+              Answer a few questions so we can build a structured 90-day plan with
+              clear milestones and weekly check-ins.
             </p>
             <Link 
               href="/assessment" 
@@ -47,16 +48,17 @@ export function FeatureCards() {
               <Zap className="h-6 w-6 text-[#111111]" />
             </div>
             <h3 className="text-2xl font-extrabold text-[#111111] mb-3">
-              Quick Purchase
+              Start the 90-Day Program
             </h3>
             <p className="text-[#6B7280] mb-8 flex-1 leading-relaxed">
-              Choose your meals, select a plan, and place your order in minutes. Perfect for those who know what they want.
+              Enroll in one focused plan and follow a simple, guided path from day
+              one to day ninety.
             </p>
             <Link 
-              href="/ourMeals" 
+              href="/mealPlan" 
               className="mt-auto flex h-[44px] items-center justify-center rounded-xl border border-[#3FAE49] text-[15px] font-semibold text-[#3FAE49] transition hover:bg-[#F3FBF4] w-full shadow-sm"
             >
-              Browse Meals
+              View 90-Day Plan
             </Link>
           </motion.div>
         </div>

@@ -20,14 +20,14 @@ export default function HowItWork() {
           </span>
 
           <h2 className="mt-6 text-5xl font-extrabold tracking-tight text-[#111111] md:text-6xl">
-            Your Personalized
+            Your 90-Day
             <br />
             Nutrition Journey
           </h2>
 
           <p className="mx-auto mt-6 max-w-175 text-lg leading-relaxed text-[#6B7280]">
-            We use AI to analyze your assessment so our nutritionist can craft
-            a plan tailored to your body and lifestyle.
+            We use your assessment to build a focused 90-day plan with clear
+            targets, weekly check-ins, and milestone reviews.
           </p>
         </motion.div>
 
@@ -41,13 +41,13 @@ export default function HowItWork() {
             },
             {
               step: "02",
-              title: "AI Analysis + Nutritionist Plan",
-              desc: "AI analyzes your assessment and a nutritionist creates your plan.",
+              title: "Get Your 90-Day Plan",
+              desc: "Receive your structured roadmap with weekly targets.",
             },
             {
               step: "03",
-              title: "Meals Delivered Fresh",
-              desc: "Receive healthy chef-prepared meals directly to your door.",
+              title: "Track and Review",
+              desc: "Check in weekly and review progress at day 30, 60, and 90.",
             },
           ].map((item, i) => (
             <motion.div 

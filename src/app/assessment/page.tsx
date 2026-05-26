@@ -84,7 +84,7 @@ export default function HomePage() {
             <label className="block text-sm font-semibold text-gray-700 mb-2">Telegram username (optional)</label>
             <input
               type="text"
-              placeholder="e.g. @maed_user"
+              placeholder="e.g. @sofi_user"
               className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#3FAE49] bg-[#FAFAFA] text-lg transition-all"
               onChange={(e) => {
                 setAnswers((prev) => {
@@ -379,7 +379,7 @@ export default function HomePage() {
             <div className="rounded-2xl border border-[#E5E5E5] bg-[#FAFAFA] p-5">
               <p className="text-sm font-semibold text-gray-700">CBE Account Number</p>
               <p className="mt-2 text-xl font-black text-[#111111]">1002003004005</p>
-              <p className="mt-2 text-sm text-gray-600">Account Name: MAED NUTRITION</p>
+              <p className="mt-2 text-sm text-gray-600">Account Name: Sofi Circle Diet</p>
             </div>
 
             <div className="mt-6">

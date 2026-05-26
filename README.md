@@ -1,6 +1,6 @@
-# MAED Nutrition - Landing Page
+# Sofi Circle Diet - Landing Page
 
-A modern, responsive nutrition and meal-planning SaaS landing page.
+A modern, responsive nutrition and meal-planning SaaS landing page for Sofi Circle Diet.
 Built with Next.js 15 (App Router), TypeScript, Tailwind CSS, Framer Motion, and Lucide React.
 
 First, run the development server:

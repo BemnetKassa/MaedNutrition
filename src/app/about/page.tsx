@@ -22,8 +22,8 @@ export default function AboutPage() {
           >
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="relative h-12 w-12 rounded-2xl overflow-hidden border border-[#EAEAEA] bg-white">
-                  <Image src="/pictures/maed_logo.jpg" alt="MAED Nutrition logo" fill className="object-cover" />
+                <div className="flex h-12 items-center rounded-2xl border border-[#EAEAEA] bg-white px-4 text-sm font-extrabold text-[#111111]">
+                  Sofi Circle Diet
                 </div>
                 <span className="inline-flex items-center rounded-full bg-[#3FAE49]/10 px-3 py-1 text-xs font-semibold text-[#3FAE49]">Since 2023</span>
               </div>
@@ -31,12 +31,12 @@ export default function AboutPage() {
                 A nutrition brand built for real lives
               </h1>
               <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
-                MAED Nutrition lead by world class bodybuilder and certified nutritionist Sofonias Nebyiu, was born from a simple belief: healthy food should feel effortless, taste amazing, and fit the rhythm of your day.
+                Sofi Circle Diet, led by world class bodybuilder and certified nutritionist Sofonias Nebyiu, builds 90-day plans from a simple belief: structure creates results, and consistency changes everything.
               </p>
               <div className="flex flex-wrap gap-3">
                 {[
-                  "Chef-prepared meals",
-                  "Local ingredients",
+                  "90-day roadmap",
+                  "Weekly check-ins",
                   "Plan-driven results",
                 ].map((item) => (
                   <span key={item} className="rounded-full border border-[#E6E6E6] bg-white px-4 py-2 text-sm font-semibold text-[#111111]">
@@ -51,7 +51,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.15 }}
                 className="grid grid-cols-3 gap-3 pt-2"
               >
-                {["5K+ clients", "98% retention", "24h delivery"].map((stat) => (
+                {"90 days", "3 phases", "1 focused plan"].map((stat) => (
                   <div key={stat} className="rounded-2xl border border-[#EAEAEA] bg-white px-4 py-3 text-center text-sm font-semibold text-[#111111] shadow-sm">
                     {stat}
                   </div>
@@ -105,10 +105,10 @@ export default function AboutPage() {
             </div>
             <h2 className="text-3xl lg:text-4xl font-bold text-[#111111] tracking-tight">Fueling your daily performance</h2>
             <p className="text-gray-600 leading-relaxed text-lg">
-              We are on a mission to make nutritious, chef-prepared meals accessible to everyone. By sourcing local ingredients and using sustainable practices, we deliver portion-controlled, delicious meals right to your door.
+              We are on a mission to make focused nutrition planning accessible to everyone, with a clear 90-day structure that keeps you consistent and accountable.
             </p>
             <p className="text-gray-600 leading-relaxed text-lg">
-              Whether you're a busy professional, an athlete, or just someone looking to improve their diet, we're here to help you hit your goals with ease so you can focus on what matters most.
+              Whether you're a busy professional, an athlete, or just someone looking to improve your diet, we're here to help you hit your goals with a plan you can follow every day.
             </p>
           </motion.div>
 
@@ -137,16 +137,16 @@ export default function AboutPage() {
         >
           {[
             {
-              title: "Precision nutrition",
+              title: "Precision planning",
               copy: "Every plan is built around real goals, real schedules, and real results.",
             },
             {
-              title: "Flavor-first",
-              copy: "Balanced meals that taste indulgent and still keep you on track.",
+              title: "Focused structure",
+              copy: "A single 90-day roadmap that makes progress feel achievable.",
             },
             {
               title: "Community-driven",
-              copy: "A local brand supporting local producers and local success stories.",
+              copy: "A local brand supporting local success stories.",
             },
           ].map((value) => (
             <div key={value.title} className="rounded-3xl border border-[#EFEFEF] bg-white p-6 shadow-sm">

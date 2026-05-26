@@ -2,16 +2,14 @@
 
 "use client";
 
-import * as React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Button } from "./Button";
 import {
   ClipboardList,
   Zap,
   Leaf,
-  ChefHat,
-  Truck,
+  Target,
+  CalendarDays,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -22,7 +20,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0 md:hidden">
         <Image
           src="/pictures/sofiMain.png"
-          alt="MAED Nutrition Hero background"
+          alt="Sofi Circle Diet hero background"
           fill
           priority
           sizes="(max-width: 767px) 100vw, 50vw"
@@ -44,37 +42,32 @@ export function Hero() {
             {/* Heading */}
             <div className="max-w-full md:max-w-140">
               <h1 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[48px] leading-tight font-extrabold tracking-tight text-[#111111]">
-                A Smarter Way to
+                A smarter way to eat,
                 <br />
-                Eat. A Better You.
+                a better you.
               </h1>
 
               <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-[#6B7280]">
-                AI analyzes your assessment for a nutritionist-led plan.
-                <br />
-                Delivered fresh. Tailored to your goals.
+                Start your journey toward a real transformation with a clear
+                12-weeks plan .
               </p>
             </div>
 
             {/* Cards */}
             <div className="mt-7 grid gap-4 grid-cols-1 md:grid-cols-2 max-w-full md:max-w-160">
-              
               {/* Card 1 */}
-              <div className="rounded-3xl border border-[#DDE7DD] bg-white p-5 shadow-sm">
-                
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#EAF7EC]">
+              <div className="rounded-3xl border border-[#D7EAD9] bg-gradient-to-br from-white via-[#F6FFF7] to-[#EAF7EC] p-6 shadow-[0_18px_40px_rgba(17,17,17,0.08)]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm">
                   <ClipboardList className="h-6 w-6 text-[#3FAE49]" />
                 </div>
 
-                <h3 className="mt-5 text-[18px] font-extrabold leading-tight text-[#3FAE49]">
-                  A. A Meal Plan
-                  <br />
-                  That Works For You
+                <h3 className="mt-5 text-[18px] font-extrabold leading-tight text-[#111111]">
+                  Start your transformation here
                 </h3>
 
                 <p className="mt-3 text-[14px] leading-relaxed text-[#6B7280]">
-                  Answer a few questions so our AI can analyze your assessment
-                  for a nutritionist who builds your plan.
+                  Take the assessment and lock in a 90-day plan with clear
+                  weekly milestones.
                 </p>
 
                 <Link href="/assessment" className="mt-5 flex h-11 w-full items-center justify-center rounded-xl bg-[#3FAE49] text-white shadow-md transition hover:bg-[#36963f] text-[14px] font-semibold">
@@ -83,28 +76,25 @@ export function Hero() {
               </div>
 
               {/* Card 2 */}
-              <div className="rounded-3xl border border-[#E5E5E5] bg-white p-5 shadow-sm">
-                
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#EAF7EC]">
-                  <Zap className="h-6 w-6 text-[#3FAE49]" />
+              <div className="rounded-3xl border border-[#E5E5E5] bg-white p-6 shadow-[0_16px_36px_rgba(17,17,17,0.08)]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#F5F5F5]">
+                  <Zap className="h-6 w-6 text-[#111111]" />
                 </div>
 
                 <h3 className="mt-5 text-[18px] font-extrabold leading-tight text-[#111111]">
-                  B. Quick
-                  <br />
-                  Purchase
+                  What you will look like after 12 weeks
                 </h3>
 
                 <p className="mt-3 text-[14px] leading-relaxed text-[#6B7280]">
-                  Choose your meals, select a plan, and place your order in
-                  minutes.
+                  Upload a front photo and our AI shows you what you are going to look like after 12 weeks of using our meal-plan.
+                  
                 </p>
 
                 <Link
-                  href="/ourMeals"
-                  className="mt-5 flex h-11 w-full items-center justify-center rounded-xl border border-[#DADADA] text-[#3FAE49] transition hover:bg-[#F3FBF4] text-[14px] font-semibold"
+                  href="/transformation"
+                  className="mt-5 flex h-11 w-full items-center justify-center rounded-xl border border-[#DADADA] text-[#111111] transition hover:bg-[#F8F8F8] text-[14px] font-semibold"
                 >
-                  Browse Meals
+                  See Transformations
                 </Link>
               </div>
             </div>
@@ -119,11 +109,11 @@ export function Hero() {
 
                 <div>
                   <h4 className="text-[14px] font-bold text-[#111111]">
-                    100% Clean Ingredients
+                    90-Day Structure
                   </h4>
 
                   <p className="text-[12px] text-[#6B7280]">
-                    No artificial preservatives
+                    Clear phases and milestones
                   </p>
                 </div>
               </div>
@@ -132,16 +122,16 @@ export function Hero() {
 
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EAF7EC]">
-                  <ChefHat className="h-5 w-5 text-[#3FAE49]" />
+                  <Target className="h-5 w-5 text-[#3FAE49]" />
                 </div>
 
                 <div>
                   <h4 className="text-[14px] font-bold text-[#111111]">
-                    Chef Prepared Meals
+                    Goal-Based Targets
                   </h4>
 
                   <p className="text-[12px] text-[#6B7280]">
-                    Restaurant quality taste
+                    Personalized guidance
                   </p>
                 </div>
               </div>
@@ -150,16 +140,16 @@ export function Hero() {
 
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EAF7EC]">
-                  <Truck className="h-5 w-5 text-[#3FAE49]" />
+                  <CalendarDays className="h-5 w-5 text-[#3FAE49]" />
                 </div>
 
                 <div>
                   <h4 className="text-[14px] font-bold text-[#111111]">
-                    Delivered Fresh
+                    Weekly Check-Ins
                   </h4>
 
                   <p className="text-[12px] text-[#6B7280]">
-                    Straight to your door
+                    Stay on track every week
                   </p>
                 </div>
               </div>
@@ -176,7 +166,7 @@ export function Hero() {
             <div className="relative flex h-105 w-full items-center justify-center md:h-140 lg:h-190">
               <Image
                 src="/pictures/sofiMain.png"
-                alt="MAED Nutrition Hero"
+                alt="Sofi Circle Diet hero"
                 fill
                 priority
                 sizes="(max-width: 767px) 100vw, 50vw"

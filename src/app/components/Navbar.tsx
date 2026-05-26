@@ -3,8 +3,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Button } from "./Button";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -15,23 +13,17 @@ export function Navbar() {
         
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/pictures/Maed_profile.jpg"
-            alt="MAED Nutrition logo"
-            width={110}
-            height={10}
-            className="object-contain h-auto"
-            priority
-          />
+          <span className="text-[16px] font-extrabold tracking-tight text-[#111111]">
+            Sofi Circle Diet
+          </span>
         </Link>
 
         {/* Nav Links */}
         <div className="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-[#111111]">
-          <Link href="/mealPlan">Meal Plans</Link>
-          <Link href="/howItWorks">How It Works</Link>
-          <Link href="/ourMeals">Our Meals</Link>
-          <Link href="/about">About Us</Link>
-          <Link href="/faq">FAQs</Link>
+          <Link href="/transformation">Transformation</Link>
+          <Link href="/phone-consultation">Phone Consultation</Link>
+          <Link href="/how-it-works">How It Works</Link>
+          <Link href="/online-coaching">Online Coaching</Link>
         </div>
 
         {/* Mobile menu button */}
@@ -74,11 +66,10 @@ export function Navbar() {
         {open && (
           <div className="absolute left-4 right-4 top-full z-40 mt-3 rounded-2xl border bg-white p-4 shadow-lg lg:hidden">
             <div className="flex flex-col gap-3 px-2 py-1 text-[15px] font-semibold">
-              <Link href="/mealPlan" onClick={() => setOpen(false)} className="py-2">Meal Plans</Link>
-              <Link href="/howItWorks" onClick={() => setOpen(false)} className="py-2">How It Works</Link>
-              <Link href="/ourMeals" onClick={() => setOpen(false)} className="py-2">Our Meals</Link>
-              <Link href="/about" onClick={() => setOpen(false)} className="py-2">About Us</Link>
-              <Link href="/faq" onClick={() => setOpen(false)} className="py-2">FAQs</Link>
+              <Link href="/transformation" onClick={() => setOpen(false)} className="py-2">Transformation</Link>
+              <Link href="/phone-consultation" onClick={() => setOpen(false)} className="py-2">Phone Consultation</Link>
+              <Link href="/how-it-works" onClick={() => setOpen(false)} className="py-2">How It Works</Link>
+              <Link href="/online-coaching" onClick={() => setOpen(false)} className="py-2">Online Coaching</Link>
 
               <div className="mt-2 flex flex-col gap-2">
                 <Link

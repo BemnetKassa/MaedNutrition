@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "MAED Nutrition",
-  description: "A Smarter Way to Eat. A Better You. AI analyzes your assessment for a nutritionist-led plan.",
+  title: "Sofi Circle Diet",
+  description: "A focused 90-day nutrition plan built around your goals and weekly progress.",
 };
 
 export default function RootLayout({
