@@ -51,7 +51,7 @@ export default function AboutPage() {
                 transition={{ delay: 0.15 }}
                 className="grid grid-cols-3 gap-3 pt-2"
               >
-                {"90 days", "3 phases", "1 focused plan"].map((stat) => (
+                {["90 days", "3 phases", "1 focused plan"].map((stat) => (
                   <div key={stat} className="rounded-2xl border border-[#EAEAEA] bg-white px-4 py-3 text-center text-sm font-semibold text-[#111111] shadow-sm">
                     {stat}
                   </div>

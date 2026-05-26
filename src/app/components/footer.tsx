@@ -25,7 +25,7 @@ export function Footer() {
           <div>
             <h3 className="text-sm font-semibold tracking-wide text-white/90">Explore</h3>
             <ul className="mt-3 space-y-2 text-xs text-white/70">
-              <li><Link href="/mealPlan" className="hover:text-white">Meal Plans</Link></li>
+              <li><Link href="/transformation" className="hover:text-white">Transformation</Link></li>
               <li><Link href="/howItWorks" className="hover:text-white">How It Works</Link></li>
               <li><Link href="/about" className="hover:text-white">About Us</Link></li>
               <li><Link href="/faq" className="hover:text-white">FAQs</Link></li>
@@ -36,9 +36,7 @@ export function Footer() {
             <h3 className="text-sm font-semibold tracking-wide text-white/90">Support</h3>
             <ul className="mt-3 space-y-2 text-xs text-white/70">
               <li><Link href="/assessment" className="hover:text-white">Start Assessment</Link></li>
-              <li><Link href="/mealPlan" className="hover:text-white">Pricing</Link></li>
-              <li><Link href="/login" className="hover:text-white">Log In</Link></li>
-              <li><Link href="/faq" className="hover:text-white">Help Center</Link></li>
+                <li><Link href="/phone-consultation" className="hover:text-white">phone consultation</Link></li>
             </ul>
           </div>
 

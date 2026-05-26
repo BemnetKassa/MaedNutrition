@@ -1,5 +1,5 @@
 import { Navbar } from "../components/Navbar";
-import Cta from "../components/cta";
+import Cta from "../components/onlineCoaching";
 
 export default function OnlineCoachingPage() {
   return (

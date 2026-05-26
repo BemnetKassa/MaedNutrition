@@ -21,9 +21,10 @@ export function Navbar() {
         {/* Nav Links */}
         <div className="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-[#111111]">
           <Link href="/transformation">Transformation</Link>
-          <Link href="/phone-consultation">Phone Consultation</Link>
           <Link href="/how-it-works">How It Works</Link>
           <Link href="/online-coaching">Online Coaching</Link>
+          <Link href="/about">About</Link>
+          <Link href="/phone-consultation">Phone Consultation</Link>
         </div>
 
         {/* Mobile menu button */}
@@ -70,6 +71,7 @@ export function Navbar() {
               <Link href="/phone-consultation" onClick={() => setOpen(false)} className="py-2">Phone Consultation</Link>
               <Link href="/how-it-works" onClick={() => setOpen(false)} className="py-2">How It Works</Link>
               <Link href="/online-coaching" onClick={() => setOpen(false)} className="py-2">Online Coaching</Link>
+              <Link href="/about" onClick={() => setOpen(false)} className="py-2">About</Link>
 
               <div className="mt-2 flex flex-col gap-2">
                 <Link

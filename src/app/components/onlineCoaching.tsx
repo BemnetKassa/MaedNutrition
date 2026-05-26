@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Dumbbell, Timer, Activity } from "lucide-react";
 
-const cta = () => (
+const OnlineCoaching = () => (
   <section className="relative overflow-hidden bg-white py-24">
     <div className="mx-auto max-w-362.5 px-4 md:px-6">
       <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
@@ -88,4 +88,4 @@ const cta = () => (
   </section>
 );
 
-export default cta;
+export default OnlineCoaching;
