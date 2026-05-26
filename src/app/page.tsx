@@ -19,7 +19,6 @@ export default function Home() {
 
         {/* Main sections moved to their own pages */}
       </main>
-      <Footer />
     </>
   );
 }

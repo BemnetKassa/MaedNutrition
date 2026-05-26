@@ -10,10 +10,9 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
 
     const image = formData.get("image") as File;
-    const weight = formData.get("weight");
-    const height = formData.get("height");
-    const exerciseLevel = formData.get("exerciseLevel");
-    const goal = formData.get("goal");
+    const goal = (formData.get("goal") || "General fitness") as string;
+    const timeframe = (formData.get("timeframe") || "12 weeks") as string;
+    const notes = (formData.get("notes") || "") as string;
 
     if (!image) {
       return NextResponse.json(
@@ -26,59 +25,46 @@ export async function POST(req: NextRequest) {
     const buffer = Buffer.from(bytes);
 
     const prompt = `
-Analyze this person's physique for fitness guidance.
+Create a realistic visual transformation preview based on the provided photo.
 
-User Information:
-- Weight: ${weight}
-- Height: ${height}
-- Exercise Level: ${exerciseLevel}
-- Goal: ${goal}
+Guidelines:
+- Keep identity, background, lighting, and pose consistent.
+- Show plausible 12-week progress aligned with the goal.
+- No extreme or unrealistic changes.
+- No medical claims.
 
-Return ONLY valid JSON:
-
-{
-  "bodyType": "",
-  "fitnessLevel": "",
-  "fatLevel": "",
-  "muscleDevelopment": "",
-  "recommendedCalories": "",
-  "recommendedProtein": "",
-  "mealRecommendation": "",
-  "workoutRecommendation": ""
-}
-
-Do not provide medical advice.
+Goal: ${goal}
+Timeframe: ${timeframe}
+Notes: ${notes}
 `;
 
-    const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
-      contents: [
+    const interaction = await ai.interactions.create({
+      model: "gemini-3-pro-image-preview",
+      input: [
+        { type: "text", text: prompt },
         {
-          text: prompt,
-        },
-        {
-          inlineData: {
-            mimeType: image.type,
-            data: buffer.toString("base64"),
-          },
+          type: "image",
+          data: buffer.toString("base64"),
+          mime_type: image.type || "image/jpeg",
         },
       ],
+      response_modalities: ["image"],
+      stream: false,
     });
 
-    const cleaned = response.text
-      ?.replace(/```json/g, "")
-      .replace(/```/g, "")
-      .trim();
+    const imageOutput = interaction.output_image;
 
-    try {
-      return NextResponse.json(JSON.parse(cleaned || "{}"));
-    } catch (parseError) {
-      console.error("Failed to parse Gemini response:", cleaned, parseError);
+    if (!imageOutput?.data) {
       return NextResponse.json(
-        { error: "Invalid AI response", raw: cleaned || null },
+        { error: "AI did not return an image" },
         { status: 502 }
       );
     }
+
+    return NextResponse.json({
+      imageBase64: imageOutput.data,
+      mimeType: imageOutput.mime_type || "image/png",
+    });
   } catch (error) {
     console.error(error);
 

@@ -17,7 +17,7 @@ export function Footer() {
               accountable.
             </p>
             <div className="flex items-center gap-2 text-white/70">
-              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-white/30 text-[10px] font-semibold">IG</span>
+              <span className="inline-flex h-5 w-5 items-center justify-center border border-white/30 text-[10px] font-semibold">IG</span>
               <span className="text-xs">@soficirclediet</span>
             </div>
           </div>

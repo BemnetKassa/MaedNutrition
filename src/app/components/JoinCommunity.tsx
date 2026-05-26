@@ -18,10 +18,10 @@ const JoinCommunity = () => {
   ];
 
   return (
-    <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0F172A]">
       {/* Background orbs */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-green-500/20 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-500/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-green-500/10 blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-yellow-500/10 blur-3xl" />
       
       {/* Simple grid pattern - fixed version */}
       <div 
@@ -60,7 +60,7 @@ const JoinCommunity = () => {
                 >
                   <Card className="bg-slate-900/50 border-slate-700 hover:border-green-500/50 transition-all hover:scale-105">
                     <CardContent className="p-4 text-center lg:text-left">
-                      <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-yellow-500 rounded-xl flex items-center justify-center mx-auto lg:mx-0 mb-3 text-white">
+                      <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-yellow-500 flex items-center justify-center mx-auto lg:mx-0 mb-3 text-white">
                         {benefit.icon}
                       </div>
                       <h3 className="text-sm font-semibold text-white">{benefit.title}</h3>
@@ -78,7 +78,7 @@ const JoinCommunity = () => {
               transition={{ delay: 0.3 }}
               className="mt-8"
             >
-              <Button size="lg" className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-6 text-lg rounded-2xl shadow-xl w-full sm:w-auto" asChild>
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-6 text-lg shadow-xl w-full sm:w-auto" asChild>
                 <a href={telegramLink} target="_blank" rel="noopener noreferrer">
                   <Send className="w-5 h-5 mr-2" />
                   Join Now on Telegram
@@ -112,7 +112,7 @@ const JoinCommunity = () => {
                   {[1, 2, 3, 4].map((i) => (
                     <div
                       key={i}
-                      className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 border-2 border-slate-800"
+                      className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 border-2 border-slate-800"
                     />
                   ))}
                 </div>
@@ -128,7 +128,7 @@ const JoinCommunity = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-green-500/20">
+            <div className="relative overflow-hidden shadow-2xl shadow-green-500/20">
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent z-10" />
               
@@ -146,10 +146,10 @@ const JoinCommunity = () => {
               
               {/* Floating card overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                <div className="bg-slate-900/90 backdrop-blur-md rounded-xl p-4 border border-green-500/30">
+                <div className="bg-slate-900/90 backdrop-blur-md p-4 border border-green-500/30">
                   <div className="flex items-center gap-3">
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-yellow-500 flex items-center justify-center">
+                      <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-yellow-500 flex items-center justify-center">
                         <Users className="w-5 h-5 text-white" />
                       </div>
                     </div>
@@ -166,7 +166,7 @@ const JoinCommunity = () => {
 
               {/* Decorative elements */}
               <div className="absolute top-4 right-4 z-20">
-                <div className="bg-green-500/20 backdrop-blur-sm rounded-full px-3 py-1 border border-green-500/30">
+                <div className="bg-green-500/20 backdrop-blur-sm px-3 py-1 border border-green-500/30">
                   <span className="text-green-400 text-xs font-semibold">LIVE COMMUNITY</span>
                 </div>
               </div>
@@ -177,10 +177,10 @@ const JoinCommunity = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
-              className="absolute -left-4 -top-4 bg-slate-900 rounded-xl p-3 shadow-xl border border-green-500/30 backdrop-blur-sm z-30 hidden lg:block"
+              className="absolute -left-4 -top-4 bg-slate-900 p-3 shadow-xl border border-green-500/30 backdrop-blur-sm z-30 hidden lg:block"
             >
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+                <div className="w-8 h-8 bg-green-500/20 flex items-center justify-center">
                   <MessageCircle className="w-4 h-4 text-green-400" />
                 </div>
                 <div>
@@ -194,10 +194,10 @@ const JoinCommunity = () => {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6 }}
-              className="absolute -right-4 -bottom-4 bg-slate-900 rounded-xl p-3 shadow-xl border border-yellow-500/30 backdrop-blur-sm z-30 hidden lg:block"
+              className="absolute -right-4 -bottom-4 bg-slate-900 p-3 shadow-xl border border-yellow-500/30 backdrop-blur-sm z-30 hidden lg:block"
             >
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                <div className="w-8 h-8 bg-yellow-500/20 flex items-center justify-center">
                   <Rocket className="w-4 h-4 text-yellow-400" />
                 </div>
                 <div>

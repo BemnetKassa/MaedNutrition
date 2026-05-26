@@ -248,7 +248,7 @@ export function FeatureCards() {
                 </p>
               </div>
 
-              <Link href="/transformation">
+              <Link href="/transformation-Ai">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}

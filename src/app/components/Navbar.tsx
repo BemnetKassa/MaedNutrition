@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import { Zap } from "lucide-react";
 import Link from "next/link";
 
 export function Navbar() {
@@ -49,18 +50,17 @@ export function Navbar() {
           </svg>
         </button>
 
-        {/* Buttons */}
+        {/* CTA */}
         <div className="flex items-center gap-3">
-          <Link
-            href="/login"
-            className="hidden sm:flex h-11 items-center justify-center rounded-xl border border-[#D9D9D9] px-6 text-[15px] font-semibold text-[#3FAE49] transition hover:bg-[#F3FBF4]"
+          <a
+            href="https://maednutritions.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-11 items-center justify-center rounded-lg bg-[#3FAE49] px-4 sm:px-6 text-[15px] font-semibold text-white shadow-sm transition hover:bg-[#36963f]"
           >
-            Log in
-          </Link>
-
-          <Link href="/mealPlan" className="flex h-11 items-center justify-center rounded-xl bg-[#3FAE49] px-4 sm:px-6 text-[15px] font-semibold text-white shadow-sm transition hover:bg-[#36963f]">
-            Sign up
-          </Link>
+            <Zap className="mr-2 h-4 w-4" />
+            Maed Nutrition
+          </a>
         </div>
 
         {/* Mobile dropdown */}
@@ -74,17 +74,16 @@ export function Navbar() {
               <Link href="/about" onClick={() => setOpen(false)} className="py-2">About</Link>
 
               <div className="mt-2 flex flex-col gap-2">
-                <Link
-                  href="/login"
-                  className="flex h-11 w-full items-center justify-center rounded-xl border border-[#D9D9D9] px-6 text-[15px] font-semibold text-[#3FAE49] transition hover:bg-[#F3FBF4]"
+                <a
+                  href="https://maednutritions.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-11 w-full items-center justify-center rounded-xl bg-[#3FAE49] px-6 text-[15px] font-semibold text-white shadow-sm transition hover:bg-[#36963f]"
                   onClick={() => setOpen(false)}
                 >
-                  Log in
-                </Link>
-
-                <Link href="/mealPlan" className="flex h-11 w-full items-center justify-center rounded-xl bg-[#3FAE49] px-6 text-[15px] font-semibold text-white shadow-sm transition hover:bg-[#36963f]" onClick={() => setOpen(false)}>
-                  Sign up
-                </Link>
+                  <Zap className="mr-2 h-4 w-4" />
+                  Maed Nutrition
+                </a>
               </div>
             </div>
           </div>
