@@ -1,272 +1,226 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
-import type { Variants } from "framer-motion";
-
-const easeOut: [number, number, number, number] = [0.16, 1, 0.3, 1];
-const easeInOut: [number, number, number, number] = [0.42, 0, 0.58, 1];
+import { motion } from "framer-motion";
+import {
+  User,
+  Weight,
+  Camera,
+  ClipboardCheck,
+  CreditCard,
+  ArrowRight,
+  Sparkles,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const steps = [
   {
     step: "01",
+    icon: User,
     title: "Fill in Personal Details",
-    points: ["Your name", "Phone number", "Email address for updates"],
+    description:
+      "Provide your name, email, and contact information so we can personalize your transformation journey.",
   },
   {
     step: "02",
+    icon: Weight,
     title: "Add Physical Details",
-    points: ["Current height", "Current weight"],
+    description:
+      "Enter your height, weight, and current body information for accurate planning.",
   },
   {
     step: "03",
+    icon: Camera,
     title: "Upload Your Photo",
-    points: ["Clear, recent photo", "Shows current condition"],
+    description:
+      "Upload a clear photo so we can create a realistic 12-week transformation preview.",
   },
   {
     step: "04",
+    icon: ClipboardCheck,
     title: "Submit Your Form",
-    points: ["Review your entries", "Submit the intake"],
+    description:
+      "Review your information and submit your transformation request.",
   },
   {
     step: "05",
-    title: "Make Payment",
-    points: ["Complete payment", "Upload payment screenshot"],
+    icon: CreditCard,
+    title: "Complete Payment",
+    description:
+      "Secure your personalized nutrition and transformation plan with payment.",
   },
-] as const;
-
-const listVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.12, delayChildren: 0.08 },
-  },
-};
-
-const stepVariants: Variants = {
-  hidden: { opacity: 0, y: 18 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: easeOut },
-  },
-};
-
-const pointsVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.06, delayChildren: 0.06 },
-  },
-};
-
-const pointVariants: Variants = {
-  hidden: { opacity: 0, x: -10 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.35, ease: easeOut },
-  },
-};
+];
 
 export default function HowItWork() {
-  const reduceMotion = useReducedMotion();
+  const router = useRouter();
 
   return (
     <section
       id="how-it-works"
-      className="relative overflow-hidden bg-linear-to-b from-muted via-background to-background py-24 sm:py-28"
+      className="relative overflow-hidden py-16 sm:py-10 md:py-15"
     >
-      <div className="pointer-events-none absolute inset-0">
+      {/* Background Effects (lighter on mobile) */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 right-0 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-green-500/20 blur-[120px] sm:blur-[140px]" />
+        <div className="absolute bottom-0 left-0 h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-yellow-400/20 blur-[120px] sm:blur-[140px]" />
+
+        {/* Floating blobs hidden on small screens */}
         <motion.div
-          className="absolute -top-40 -right-20 h-80 w-80 rounded-full bg-brand/10 blur-3xl"
-          animate={
-            reduceMotion
-              ? undefined
-              : { y: [0, 10, 0], opacity: [0.3, 0.55, 0.3] }
-          }
-          transition={
-            reduceMotion
-              ? undefined
-              : { duration: 11, repeat: Infinity, ease: easeInOut }
-          }
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 8, repeat: Infinity }}
+          className="hidden sm:block absolute top-20 right-20 h-40 w-40 rounded-full bg-green-500/10 blur-3xl"
         />
+
         <motion.div
-          className="absolute -bottom-40 -left-20 h-80 w-80 rounded-full bg-amber-400/12 blur-3xl"
-          animate={
-            reduceMotion
-              ? undefined
-              : { y: [0, -8, 0], opacity: [0.25, 0.5, 0.25] }
-          }
-          transition={
-            reduceMotion
-              ? undefined
-              : { duration: 12, repeat: Infinity, ease: easeInOut }
-          }
+          animate={{ y: [0, 15, 0] }}
+          transition={{ duration: 10, repeat: Infinity }}
+          className="hidden sm:block absolute bottom-20 left-20 h-40 w-40 rounded-full bg-yellow-400/10 blur-3xl"
         />
-        <div className="absolute inset-x-0 top-24 h-px bg-linear-to-r from-transparent via-brand/20 to-transparent" />
-        <div className="absolute inset-x-0 top-28 h-px bg-linear-to-r from-transparent via-amber-400/25 to-transparent" />
       </div>
 
-      <div className="relative mx-auto max-w-362.5 px-4 md:px-6">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* HEADER */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-120px" }}
-          transition={{ duration: 0.55, ease: easeOut }}
-          className="mb-12 text-center"
+          viewport={{ once: true }}
+          className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-            <span className="bg-linear-to-r from-brand via-brand to-amber-400 bg-clip-text text-transparent">
-              How it works
+          <div className="inline-flex items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-4 py-2 text-xs sm:text-sm font-medium text-green-500">
+            <Sparkles className="h-4 w-4" />
+            SIMPLE 5 STEP PROCESS
+          </div>
+
+          <h2 className="mt-6 text-3xl sm:text-5xl md:text-7xl font-black leading-tight">
+            Your Transformation
+            <span className="block bg-gradient-to-r from-green-500 via-green-400 to-yellow-400 bg-clip-text text-transparent">
+              Starts Today
             </span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Follow these simple steps to submit your intake and preview your 12-week transformation.
+
+          <p className="mt-5 text-sm sm:text-lg md:text-xl text-muted-foreground">
+            Complete a quick intake form and discover what your body could look
+            like after 12 weeks of following your personalized nutrition plan.
           </p>
         </motion.div>
 
-        <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
-          <motion.header
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-120px" }}
-            transition={{ duration: 0.55, ease: easeOut }}
-            className="text-center lg:col-span-5 lg:sticky lg:top-24 lg:text-left"
-          >
-            <motion.span
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: 0.05 }}
-              className="inline-flex items-center rounded-full border border-border bg-background/70 px-4 py-2 text-xs font-semibold tracking-[0.26em] text-brand shadow-sm backdrop-blur"
+        {/* STATS */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mx-auto mt-10 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl"
+        >
+          {[
+            { label: "Weeks", value: "12", color: "green" },
+            { label: "Steps", value: "5", color: "yellow" },
+            { label: "Personalized", value: "100%", color: "green" },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="rounded-2xl sm:rounded-3xl border bg-background/50 p-4 sm:p-6 text-center backdrop-blur-xl"
             >
-              <span
-                aria-hidden="true"
-                className="mr-2 inline-flex h-2 w-2 rounded-full bg-amber-400 shadow-sm"
-              />
-              IN 5 STEPS
-            </motion.span>
+              <h3
+                className={`text-2xl sm:text-4xl font-black ${
+                  item.color === "green" ? "text-green-500" : "text-yellow-500"
+                }`}
+              >
+                {item.value}
+              </h3>
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                {item.label}
+              </p>
+            </div>
+          ))}
+        </motion.div>
 
-            <motion.h3
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: 0.08 }}
-              className="mt-6 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl"
-            >
-              Your 12-Week
-              <br />
-              Transformation Starts Here
-            </motion.h3>
+        {/* TIMELINE */}
+        <div className="relative mx-auto mt-16 sm:mt-24 max-w-5xl">
+          {/* Center line */}
+          <div className="absolute left-6 sm:left-8 top-0 hidden h-full w-1 bg-gradient-to-b from-green-500 via-yellow-400 to-green-500 lg:block" />
 
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.55, delay: 0.12 }}
-              className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0"
-            >
-              Complete a quick intake, submit your details, and receive a tailored
-              12-week preview of your projected results before we begin.
-            </motion.p>
-          </motion.header>
+          <div className="space-y-6 sm:space-y-8">
+            {steps.map((item, index) => {
+              const Icon = item.icon;
 
-          <motion.div
-            className="lg:col-span-7"
-            variants={listVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <div className="relative">
-              <motion.div
-                initial={{ scaleY: 0 }}
-                whileInView={{ scaleY: 1 }}
-                viewport={{ once: true, margin: "-120px" }}
-                transition={{ duration: 0.9, ease: easeOut }}
-                className="absolute left-5.75 top-2 hidden h-[calc(100%-0.5rem)] w-px origin-top bg-linear-to-b from-brand/25 via-brand/15 to-transparent sm:block"
-              />
+              return (
+                <motion.div
+                  key={item.step}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <div className="flex gap-4 sm:gap-6">
+                    {/* ICON */}
+                    <div className="hidden lg:flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-yellow-400 shadow-lg">
+                      <Icon className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
+                    </div>
 
-              <ol className="space-y-10 sm:space-y-12">
-                {steps.map((item, index) => (
-                  <motion.li
-                    key={item.step}
-                    variants={stepVariants}
-                    className="group relative before:absolute before:-inset-x-3 before:-inset-y-2 before:rounded-2xl before:bg-linear-to-r before:from-brand/8 before:via-brand/4 before:to-amber-400/10 before:opacity-0 before:transition-opacity before:duration-300 hover:before:opacity-100"
-                  >
-                    <div className="relative flex gap-5 sm:gap-7">
-                      <div className="relative flex w-12 flex-col items-center">
-                        <motion.div
-                          whileHover={reduceMotion ? undefined : { scale: 1.05 }}
-                          whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-                          className="relative flex h-12 w-12 items-center justify-center rounded-full border border-border bg-background/80 text-sm font-bold text-brand shadow-sm backdrop-blur supports-backdrop-filter:bg-background/70"
-                        >
-                          {item.step}
-                          <span className="pointer-events-none absolute inset-0 rounded-full ring-1 ring-amber-400/20 transition-colors duration-300 group-hover:ring-brand/15" />
-                        </motion.div>
+                    {/* CARD */}
+                    <div className="relative flex-1 overflow-hidden rounded-2xl sm:rounded-[32px] border bg-background/60 p-5 sm:p-8 backdrop-blur-xl">
+                      {/* glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-yellow-400/5" />
 
-                        {index !== steps.length - 1 ? (
-                          <motion.div
-                            initial={{ scaleY: 0 }}
-                            whileInView={{ scaleY: 1 }}
-                            viewport={{ once: true, margin: "-120px" }}
-                            transition={{ duration: 0.7, ease: easeOut }}
-                            className="mt-4 h-full w-px origin-top bg-linear-to-b from-brand/25 to-transparent sm:hidden"
-                          />
-                        ) : null}
+                      {/* step number (hidden on mobile) */}
+                      <div className="hidden sm:block absolute -right-2 -top-2 text-6xl sm:text-8xl font-black text-green-500/5">
+                        {item.step}
                       </div>
 
-                      <div className="pt-0.5">
-                        <div className="flex items-center gap-3">
-                          <span className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
-                            Step {item.step}
-                          </span>
-                          <span className="hidden h-px flex-1 bg-linear-to-r from-border via-border/70 to-transparent sm:block" />
-                        </div>
+                      <div className="relative">
+                        <span className="inline-flex text-xs font-bold text-green-500 bg-green-500/10 px-2 py-1 rounded-full">
+                          STEP {item.step}
+                        </span>
 
-                        <h3 className="mt-2 text-xl font-bold text-foreground transition-colors duration-300 group-hover:text-brand sm:text-2xl md:text-3xl">
-                          <span className="underline decoration-transparent decoration-2 underline-offset-8 transition-colors duration-300 group-hover:decoration-amber-400">
-                            {item.title}
-                          </span>
+                        <h3 className="mt-3 sm:mt-4 text-lg sm:text-2xl font-bold">
+                          {item.title}
                         </h3>
 
-                        <motion.ul
-                          variants={pointsVariants}
-                          className="mt-4 space-y-2 text-sm leading-relaxed text-muted-foreground sm:text-base"
-                        >
-                          {item.points.map((point) => (
-                            <motion.li
-                              key={point}
-                              variants={pointVariants}
-                              className="flex items-start gap-2"
-                            >
-                              <span
-                                aria-hidden="true"
-                                className="mt-1 text-amber-500 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:text-brand-dark"
-                              >
-                                →
-                              </span>
-                              <span>{point}</span>
-                            </motion.li>
-                          ))}
-                        </motion.ul>
+                        <p className="mt-3 text-sm sm:text-base text-muted-foreground">
+                          {item.description}
+                        </p>
+
+                        <div className="mt-5 flex items-center gap-2 text-green-500 text-sm">
+                          Continue Journey
+                          <ArrowRight className="h-4 w-4" />
+                        </div>
                       </div>
                     </div>
-                  </motion.li>
-                ))}
-              </ol>
-            </div>
-
-            <motion.div
-              variants={stepVariants}
-              className="mt-10 border-t border-border pt-6 text-center"
-            >
-              <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
-                Upon submission you will get an overview of what your body will look
-                like if you follow along with the plan for 12 weeks.
-              </p>
-            </motion.div>
-          </motion.div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mx-auto mt-16 sm:mt-24 max-w-4xl text-center"
+        >
+          <div className="rounded-3xl bg-gradient-to-r from-green-500 to-yellow-400 p-[1px]">
+            <div className="rounded-3xl bg-background p-6 sm:p-10">
+              <Sparkles className="mx-auto h-10 w-10 text-green-500" />
+
+              <h3 className="mt-4 text-2xl sm:text-4xl font-black">
+                Your Future Body Starts Here
+              </h3>
+
+              <p className="mt-4 text-sm sm:text-lg text-muted-foreground">
+                Submit your details and unlock your personalized 12-week transformation plan.
+              </p>
+
+              <button
+                onClick={() => router.push("/assessment")}
+                className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-green-500 to-yellow-400 px-6 sm:px-8 py-3 sm:py-4 font-bold text-white transition hover:scale-105"
+              >
+                Start My Transformation
+                <ArrowRight className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

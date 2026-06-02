@@ -1,6 +1,32 @@
 import { GoogleGenAI } from "@google/genai";
 import { NextRequest, NextResponse } from "next/server";
 
+type SupportedImageMimeType =
+  | "image/jpeg"
+  | "image/png"
+  | "image/webp"
+  | "image/heic"
+  | "image/heif"
+  | "image/gif"
+  | "image/bmp"
+  | "image/tiff";
+
+function normalizeImageMimeType(mimeType: string | null): SupportedImageMimeType {
+  switch (mimeType) {
+    case "image/png":
+    case "image/webp":
+    case "image/heic":
+    case "image/heif":
+    case "image/gif":
+    case "image/bmp":
+    case "image/tiff":
+      return mimeType;
+    case "image/jpeg":
+    default:
+      return "image/jpeg";
+  }
+}
+
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY!,
 });
@@ -45,7 +71,7 @@ Notes: ${notes}
         {
           type: "image",
           data: buffer.toString("base64"),
-          mime_type: image.type || "image/jpeg",
+          mime_type: normalizeImageMimeType(image.type || null),
         },
       ],
       response_modalities: ["image"],
