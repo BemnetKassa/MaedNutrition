@@ -10,7 +10,7 @@ export default function AboutPage() {
       <Navbar />
       <div className="pt-32 pb-20 px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Hero Section */}
-        <div className="relative overflow-hidden rounded-[40px] border border-[#F0F0F0] bg-gradient-to-br from-white via-[#FAFAFA] to-[#EEF9F0] p-8 md:p-12 mb-16 md:mb-24">
+        <div className="relative overflow-hidden rounded-[40px] border border-[#F0F0F0] bg-linear-to-br from-white via-[#FAFAFA] to-[#EEF9F0] p-8 md:p-12 mb-16 md:mb-24">
           <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[#3FAE49]/10 blur-3xl" />
           <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-[#111111]/5 blur-3xl" />
 
@@ -101,26 +101,40 @@ export default function AboutPage() {
             className="space-y-6"
           >
             <div className="inline-block bg-[#3FAE49]/10 py-1 px-3 rounded-full">
-              <span className="text-[#3FAE49] font-semibold text-sm">Our Mission</span>
+              <span className="text-[#3FAE49] font-semibold text-sm">About Sofonias</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#111111] tracking-tight">Fueling your daily performance</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#111111] tracking-tight">Who is Sofonias?</h2>
             <p className="text-gray-600 leading-relaxed text-lg">
-              We are on a mission to make focused nutrition planning accessible to everyone, with a clear 90-day structure that keeps you consistent and accountable.
+              Hello everyone, my name is <span className="font-semibold text-[#111111]">Sofonias Nebiyu</span>. For the past <span className="font-semibold text-[#111111]">4–5 years</span>, I have been actively involved in <span className="font-semibold text-[#111111]">bodybuilding</span> and <span className="font-semibold text-[#111111]">fat loss coaching</span>, helping people build structure, confidence, and lasting results.
             </p>
-            <p className="text-gray-600 leading-relaxed text-lg">
-              Whether you're a busy professional, an athlete, or just someone looking to improve your diet, we're here to help you hit your goals with a plan you can follow every day.
-            </p>
+            <ul className="space-y-3 text-gray-600 leading-relaxed text-lg">
+              <li>
+                Participated in international physique competitions and earned <span className="font-semibold text-[#111111]">3rd place</span> rankings.
+              </li>
+              <li>
+                Studied and applied evidence-based principles from books and educational materials on <span className="font-semibold text-[#111111]">weight training</span> and <span className="font-semibold text-[#111111]">fat loss</span>.
+              </li>
+              <li>
+                Helped <span className="font-semibold text-[#111111]">500+</span> clients lose weight and achieve their desired physiques.
+              </li>
+              <li>
+                Work as an instructor in <span className="font-semibold text-[#111111]">Nutrition</span> and <span className="font-semibold text-[#111111]">Hypertrophy (muscle growth)</span>, training <span className="font-semibold text-[#111111]">120+</span> students in-person and online.
+              </li>
+              <li>
+                Graduate of <span className="font-semibold text-[#111111]">Mechanical Engineering</span>.
+              </li>
+            </ul>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative h-[400px] lg:h-[500px] rounded-4xl overflow-hidden shadow-2xl"
+            className="relative h-100 lg:h-125 rounded-4xl overflow-hidden shadow-2xl"
           >
             <Image 
-              src="/pictures/DSC00764 (1).webp" 
-              alt="Healthy meal preparation" 
+              src="/pictures/sofi12.webp" 
+              alt="Sofonias coaching" 
               fill 
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
