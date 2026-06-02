@@ -3,151 +3,180 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Navbar } from "../components/Navbar";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <main className="bg-[#FAFAFA] min-h-screen">
+    <main className="min-h-screen bg-white text-black overflow-hidden">
       <Navbar />
+
+      {/* Subtle Background Accents */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[-200px] right-[-200px] h-[500px] w-[500px] rounded-full bg-[#3FAE49]/10 blur-[120px]" />
+        <div className="absolute bottom-[-200px] left-[-200px] h-[500px] w-[500px] rounded-full bg-yellow-300/20 blur-[140px]" />
+      </div>
+
       <div className="pt-32 pb-20 px-6 lg:px-8 max-w-7xl mx-auto">
-        {/* Hero Section */}
-        <div className="relative overflow-hidden rounded-[40px] border border-[#F0F0F0] bg-linear-to-br from-white via-[#FAFAFA] to-[#EEF9F0] p-8 md:p-12 mb-16 md:mb-24">
-          <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-[#3FAE49]/10 blur-3xl" />
-          <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-[#111111]/5 blur-3xl" />
+
+        {/* HERO */}
+        <div className="relative rounded-[40px] border border-gray-200 bg-white shadow-sm p-8 md:p-12 overflow-hidden">
 
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center relative"
+            className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center"
           >
+
+            {/* LEFT */}
             <div className="space-y-6">
               <div className="flex items-center gap-3">
-                <div className="flex h-12 items-center rounded-2xl border border-[#EAEAEA] bg-white px-4 text-sm font-extrabold text-[#111111]">
+                <div className="px-4 py-2 rounded-full bg-[#3FAE49] text-black font-extrabold text-sm">
                   Sofi Circle Diet
                 </div>
-                <span className="inline-flex items-center rounded-full bg-[#3FAE49]/10 px-3 py-1 text-xs font-semibold text-[#3FAE49]">Since 2023</span>
+                <span className="px-3 py-1 rounded-full bg-yellow-300 text-black text-xs font-bold">
+                  Since 2023
+                </span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#111111] tracking-tight">
-                A nutrition brand built for real lives
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-black">
+                A nutrition brand built for{" "}
+                <span className="text-[#3FAE49]">real lives</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
+
+              <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-2xl">
                 Sofi Circle Diet, led by world class bodybuilder and certified nutritionist Sofonias Nebyiu, builds 90-day plans from a simple belief: structure creates results, and consistency changes everything.
               </p>
+
+              {/* tags */}
               <div className="flex flex-wrap gap-3">
                 {[
                   "90-day roadmap",
                   "Weekly check-ins",
                   "Plan-driven results",
                 ].map((item) => (
-                  <span key={item} className="rounded-full border border-[#E6E6E6] bg-white px-4 py-2 text-sm font-semibold text-[#111111]">
+                  <span
+                    key={item}
+                    className="px-4 py-2 rounded-full border border-gray-200 bg-white text-sm text-gray-700 hover:border-[#3FAE49]/50 transition"
+                  >
                     {item}
                   </span>
                 ))}
               </div>
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.15 }}
-                className="grid grid-cols-3 gap-3 pt-2"
-              >
+
+              {/* stats */}
+              <div className="grid grid-cols-3 gap-3 pt-2">
                 {["90 days", "3 phases", "1 focused plan"].map((stat) => (
-                  <div key={stat} className="rounded-2xl border border-[#EAEAEA] bg-white px-4 py-3 text-center text-sm font-semibold text-[#111111] shadow-sm">
+                  <div
+                    key={stat}
+                    className="rounded-2xl bg-gray-50 border border-gray-200 px-4 py-3 text-center text-sm font-semibold hover:border-yellow-300 transition"
+                  >
                     {stat}
                   </div>
                 ))}
-              </motion.div>
+              </div>
+
+              {/* CTA */}
+              <div className="pt-4 flex gap-4 flex-wrap">
+                <Link
+                  href="/assessment"
+                  className="px-6 py-3 rounded-2xl bg-[#3FAE49] text-black font-bold hover:scale-105 transition shadow-sm"
+                >
+                  Start Assessment
+                </Link>
+
+                <div className="px-6 py-3 rounded-2xl border border-gray-300 text-gray-700 hover:border-[#3FAE49] transition">
+                  Learn More
+                </div>
+              </div>
             </div>
 
+            {/* RIGHT IMAGES */}
             <div className="relative grid grid-cols-2 gap-4">
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                animate={{ y: [0, -8, 0] }}
-                style={{ willChange: "transform" }}
-                transition={{
-                  opacity: { duration: 0.4, delay: 0.1 },
-                  y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.1 },
-                }}
-                className="relative h-64 md:h-72 rounded-3xl overflow-hidden shadow-xl"
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 6, repeat: Infinity }}
+                className="relative h-72 rounded-3xl overflow-hidden border border-gray-200 shadow-md"
               >
-                <Image src="/pictures/sofi9.webp" alt="Founder preparing meals" fill className="object-cover" />
+                <Image
+                  src="/pictures/DSC00730.webp"
+                  alt="Founder preparing meals"
+                  fill
+                  className="object-cover"
+                />
               </motion.div>
+
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                animate={{ y: [0, 8, 0] }}
-                style={{ willChange: "transform" }}
-                transition={{
-                  opacity: { duration: 0.4, delay: 0.2 },
-                  y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.4 },
-                }}
-                className="relative h-64 md:h-72 rounded-3xl overflow-hidden shadow-xl mt-8"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 6, repeat: Infinity }}
+                className="relative h-72 mt-10 rounded-3xl overflow-hidden border border-gray-200 shadow-md"
               >
-                <Image src="/pictures/sofi8.webp" alt="Healthy lifestyle inspiration" fill className="object-cover" />
+                <Image
+                  src="/pictures/DSC00749.webp"
+                  alt="Healthy lifestyle inspiration"
+                  fill
+                  className="object-cover"
+                />
               </motion.div>
             </div>
           </motion.div>
         </div>
 
-        {/* Mission Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
+        {/* MISSION */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 lg:gap-20 items-center mt-24">
+
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="inline-block bg-[#3FAE49]/10 py-1 px-3 rounded-full">
-              <span className="text-[#3FAE49] font-semibold text-sm">About Sofonias</span>
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#111111] tracking-tight">Who is Sofonias?</h2>
-            <p className="text-gray-600 leading-relaxed text-lg">
-              Hello everyone, my name is <span className="font-semibold text-[#111111]">Sofonias Nebiyu</span>. For the past <span className="font-semibold text-[#111111]">4–5 years</span>, I have been actively involved in <span className="font-semibold text-[#111111]">bodybuilding</span> and <span className="font-semibold text-[#111111]">fat loss coaching</span>, helping people build structure, confidence, and lasting results.
+            <span className="inline-block px-4 py-1 rounded-full bg-[#3FAE49]/10 text-[#3FAE49] font-semibold text-sm">
+              About Sofonias
+            </span>
+
+            <h2 className="text-3xl lg:text-4xl font-bold text-black">
+              Who is Sofonias?
+            </h2>
+
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Hello everyone, my name is <span className="text-black font-semibold">Sofonias Nebiyu</span>. For the past <span className="text-black font-semibold">4–5 years</span>, I have been actively involved in bodybuilding and fat loss coaching, helping people build structure, confidence, and lasting results.
             </p>
-            <ul className="space-y-3 text-gray-600 leading-relaxed text-lg">
-              <li>
-                Participated in international physique competitions and earned <span className="font-semibold text-[#111111]">3rd place</span> rankings.
-              </li>
-              <li>
-                Studied and applied evidence-based principles from books and educational materials on <span className="font-semibold text-[#111111]">weight training</span> and <span className="font-semibold text-[#111111]">fat loss</span>.
-              </li>
-              <li>
-                Helped <span className="font-semibold text-[#111111]">500+</span> clients lose weight and achieve their desired physiques.
-              </li>
-              <li>
-                Work as an instructor in <span className="font-semibold text-[#111111]">Nutrition</span> and <span className="font-semibold text-[#111111]">Hypertrophy (muscle growth)</span>, training <span className="font-semibold text-[#111111]">120+</span> students in-person and online.
-              </li>
-              <li>
-                Graduate of <span className="font-semibold text-[#111111]">Mechanical Engineering</span>.
-              </li>
+
+            <ul className="space-y-3 text-gray-600 text-lg">
+              {[
+                "Participated in international physique competitions and earned 3rd place rankings.",
+                "Studied evidence-based training and fat loss principles.",
+                "Helped 500+ clients lose weight and transform.",
+                "Instructor in Nutrition and Hypertrophy (120+ students).",
+                "Graduate of Mechanical Engineering.",
+              ].map((item) => (
+                <li key={item} className="border-l-2 border-[#3FAE49] pl-4">
+                  {item}
+                </li>
+              ))}
             </ul>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative h-100 lg:h-125 rounded-4xl overflow-hidden shadow-2xl"
+            className="relative h-[500px] rounded-2xl overflow-hidden border border-gray-200 shadow-lg"
           >
-            <Image 
-              src="/pictures/sofi12.webp" 
-              alt="Sofonias coaching" 
-              fill 
+            <Image
+              src="/pictures/sofi12.webp"
+              alt="Sofonias coaching"
+              fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </motion.div>
         </div>
 
-        {/* Values */}
+        {/* VALUES */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6"
         >
           {[
             {
@@ -163,12 +192,18 @@ export default function AboutPage() {
               copy: "A local brand supporting local success stories.",
             },
           ].map((value) => (
-            <div key={value.title} className="rounded-3xl border border-[#EFEFEF] bg-white p-6 shadow-sm">
-              <h3 className="text-xl font-bold text-[#111111] mb-3">{value.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{value.copy}</p>
+            <div
+              key={value.title}
+              className="p-6 rounded-3xl bg-white border border-gray-200 shadow-sm hover:shadow-md transition"
+            >
+              <h3 className="text-xl font-bold mb-3 text-black">
+                {value.title}
+              </h3>
+              <p className="text-gray-600">{value.copy}</p>
             </div>
           ))}
         </motion.div>
+
       </div>
     </main>
   );

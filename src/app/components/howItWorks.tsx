@@ -92,7 +92,7 @@ export default function HowItWork() {
 
           <h2 className="mt-6 text-3xl sm:text-5xl md:text-7xl font-black leading-tight">
             Your Transformation
-            <span className="block bg-gradient-to-r from-green-500 via-green-400 to-yellow-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-green-600 via-green-700 to-green-800 bg-clip-text text-transparent">
               Starts Today
             </span>
           </h2>
@@ -200,7 +200,7 @@ export default function HowItWork() {
           className="mx-auto mt-16 sm:mt-24 max-w-4xl text-center"
         >
           <div className="rounded-3xl bg-gradient-to-r from-green-500 to-yellow-400 p-[1px]">
-            <div className="rounded-3xl bg-background p-6 sm:p-10">
+            <div className="rounded-2xl bg-background p-6 sm:p-10">
               <Sparkles className="mx-auto h-10 w-10 text-green-500" />
 
               <h3 className="mt-4 text-2xl sm:text-4xl font-black">
@@ -213,7 +213,7 @@ export default function HowItWork() {
 
               <button
                 onClick={() => router.push("/assessment")}
-                className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-green-500 to-yellow-400 px-6 sm:px-8 py-3 sm:py-4 font-bold text-white transition hover:scale-105"
+                className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-green-900 to-green-700 px-6 sm:px-8 py-3 sm:py-4 font-bold text-white transition hover:scale-105"
               >
                 Start My Transformation
                 <ArrowRight className="h-5 w-5" />
