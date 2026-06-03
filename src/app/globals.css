@@ -40,6 +40,17 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+    --ink: #14110d;
+  --muted: #6b6257;
+  --line: #e2d8ca;
+  --paper: #fff8ee;
+  --cream: #f3eadc;
+  --green: #16784a;
+  --green-dark: #0c4d32;
+  --gold: #d89a2b;
+  --coral: #c95d43;
+  --white: #ffffff;
+  --shadow: 0 22px 70px rgba(26, 19, 10, 0.14);
 }
 
 @theme inline {
@@ -92,6 +103,8 @@ body {
   font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+    background-color: var(--paper);
+  color: var(--ink);
 }
 
 .dark {
