@@ -5,7 +5,7 @@ export default function OnlineCoachingPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-white pt-28 text-[#111111]">
+      <main className="bg-[#fff8ee] text-[#111111]">
         <Cta />
       </main>
     </>

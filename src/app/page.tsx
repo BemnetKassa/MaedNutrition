@@ -3,6 +3,7 @@ import { Hero } from "./components/Hero";
 import  JoinCommunity  from "./components/JoinCommunity";
 import HowItWorks from "./components/howItWorks";
 import Transformations from "./components/transformations";
+import { AboutSection } from "./components/About";
 
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1 px-0 mx-0" >
         <Hero />
+        <AboutSection />
         <Transformations />
         <HowItWorks />
         <JoinCommunity />

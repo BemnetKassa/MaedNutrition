@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { LanguageProvider } from "@/i18n/LanguageProvider";
 import { Footer } from "./footer";
 
 interface AppShellProps {
@@ -12,9 +13,9 @@ export function AppShell({ children }: AppShellProps) {
   const hideFooter = pathname.startsWith("/assessment");
 
   return (
-    <>
+    <LanguageProvider>
       {children}
       {!hideFooter && <Footer />}
-    </>
+    </LanguageProvider>
   );
 }

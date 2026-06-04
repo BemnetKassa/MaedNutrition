@@ -14,11 +14,13 @@ import {
   ArrowRight
 } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 export function Hero() {
+  const { messages: m } = useLanguage();
+
   return (
     <section className="relative overflow-hidden bg-[#fff8ee] pt-24 md:pt-0 pb-8">
-      {/* Background gradients matching HTML */}
       <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 opacity-100"
@@ -28,11 +30,10 @@ export function Hero() {
         />
       </div>
 
-      {/* Mobile background image */}
       <div className="absolute inset-0 z-0 md:hidden">
         <Image
           src="/pictures/sofiMain.png"
-          alt="Sofi Circle Diet hero background"
+          alt={m.hero.heroBgAlt}
           fill
           priority
           sizes="(max-width: 767px) 100vw, 50vw"
@@ -44,17 +45,14 @@ export function Hero() {
 
         <div className="grid items-center gap-6 grid-cols-1 md:grid-cols-2">
 
-          {/* LEFT SIDE */}
           <motion.div
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="relative z-10"
           >
-            {/* Decorative gradient blob */}
             <div className="absolute -top-20 -left-20 w-64 h-64 bg-[#d89a2b]/20 rounded-full blur-3xl -z-10" />
 
-            {/* Heading */}
             <div className="max-w-full md:max-w-140">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -63,27 +61,24 @@ export function Hero() {
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#14110d]/20 bg-white/60 backdrop-blur-sm mb-6">
                   <Sparkles className="w-3.5 h-3.5 text-[#16784a]" />
-                  <span className="text-[11px] font-black uppercase tracking-wider text-[#0c4d32]">REAL TRANSFORMATIONS • 90-DAY STRUCTURE</span>
+                  <span className="text-[11px] font-black uppercase tracking-wider text-[#0c4d32]">{m.hero.badge}</span>
                 </div>
               </motion.div>
 
-              {/* Updated heading text to match HTML */}
               <h1 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[48px] leading-[0.95] font-black tracking-tight text-[#14110d]">
-                Eat smart. Train right.
+                {m.hero.titleLine1}
                 <br />
                 <span className="bg-gradient-to-r from-[#16784a] to-[#0c4d32] bg-clip-text text-transparent">
-                  Transform fast.
+                  {m.hero.titleLine2}
                 </span>
               </h1>
 
               <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-[#6b6257] max-w-lg">
-                Finally, a plan that tells you exactly what to eat, how to train, when to adjust, and how to stay consistent every single week.
+                {m.hero.subtitle}
               </p>
             </div>
 
-            {/* Cards with updated colors */}
             <div className="mt-8 grid gap-5 grid-cols-1 md:grid-cols-2 max-w-full md:max-w-160">
-              {/* Card 1 - Assessment */}
               <motion.div
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -94,12 +89,11 @@ export function Hero() {
                 </div>
 
                 <h3 className="mt-5 text-[18px] font-extrabold leading-tight text-[#14110d]">
-                  Start your transformation here
+                  {m.hero.card1Title}
                 </h3>
 
                 <p className="mt-3 text-[14px] leading-relaxed text-[#6b6257]">
-                  Take the assessment and lock in a 90-day plan with clear
-                  weekly milestones.
+                  {m.hero.card1Desc}
                 </p>
 
                 <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 400 }}>
@@ -107,13 +101,12 @@ export function Hero() {
                     href="/assessment"
                     className="mt-5 flex h-11 w-full items-center justify-center rounded-lg bg-[#16784a] text-white shadow-[0_14px_28px_rgba(22,120,74,0.25)] hover:bg-[#0c4d32] transition-all text-[14px] font-black relative overflow-hidden group/btn"
                   >
-                    <span className="relative z-10">Start My Assessment</span>
+                    <span className="relative z-10">{m.hero.card1Cta}</span>
                     <ArrowRight className="absolute right-4 w-4 h-4 opacity-0 group-hover/btn:opacity-100 group-hover/btn:translate-x-1 transition-all" />
                   </Link>
                 </motion.div>
               </motion.div>
 
-              {/* Card 2 - AI Transformation */}
               <motion.div
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -124,11 +117,11 @@ export function Hero() {
                 </div>
 
                 <h3 className="mt-5 text-[18px] font-extrabold leading-tight text-[#14110d]">
-                  What you'll look like after 12 weeks
+                  {m.hero.card2Title}
                 </h3>
 
                 <p className="mt-3 text-[14px] leading-relaxed text-[#6b6257]">
-                  Upload a front photo and our AI shows your transformation after 12 weeks of using our meal-plan.
+                  {m.hero.card2Desc}
                 </p>
 
                 <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 400 }}>
@@ -136,14 +129,13 @@ export function Hero() {
                     href="/transformation-Ai"
                     className="mt-5 flex h-11 w-full items-center justify-center rounded-lg border border-[#e2d8ca] bg-white text-[#14110d] hover:bg-[#f3eadc] transition-all text-[14px] font-black group/btn"
                   >
-                    <span>See Transformations</span>
+                    <span>{m.hero.card2Cta}</span>
                     <Sparkles className="ml-2 w-3.5 h-3.5 opacity-0 group-hover/btn:opacity-100 transition-all" />
                   </Link>
                 </motion.div>
               </motion.div>
             </div>
 
-            {/* Bottom Features - updated colors */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -161,10 +153,10 @@ export function Hero() {
 
                 <div>
                   <h4 className="text-[14px] font-bold text-[#14110d]">
-                    90-Day Structure
+                    {m.hero.feature1Title}
                   </h4>
                   <p className="text-[12px] text-[#6b6257]">
-                    Clear phases and milestones
+                    {m.hero.feature1Desc}
                   </p>
                 </div>
               </div>
@@ -182,10 +174,10 @@ export function Hero() {
 
                 <div>
                   <h4 className="text-[14px] font-bold text-[#14110d]">
-                    Goal-Based Targets
+                    {m.hero.feature2Title}
                   </h4>
                   <p className="text-[12px] text-[#6b6257]">
-                    Personalized guidance
+                    {m.hero.feature2Desc}
                   </p>
                 </div>
               </div>
@@ -203,17 +195,16 @@ export function Hero() {
 
                 <div>
                   <h4 className="text-[14px] font-bold text-[#14110d]">
-                    Weekly Check-Ins
+                    {m.hero.feature3Title}
                   </h4>
                   <p className="text-[12px] text-[#6b6257]">
-                    Stay on track every week
+                    {m.hero.feature3Desc}
                   </p>
                 </div>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* RIGHT SIDE IMAGE - unchanged */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
@@ -223,7 +214,7 @@ export function Hero() {
             <div className="relative flex h-105 w-full items-center justify-center md:h-140 lg:h-190">
               <Image
                 src="/pictures/sofiMain.png"
-                alt="Sofi Circle Diet hero"
+                alt={m.hero.heroAlt}
                 fill
                 priority
                 sizes="(max-width: 767px) 100vw, 50vw"

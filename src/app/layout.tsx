@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Geist } from "next/font/google";
+import { Inter, Geist, Noto_Sans_Ethiopic } from "next/font/google";
 import "./globals.css";
 import { AppShell } from "./components/AppShell";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const notoEthiopic = Noto_Sans_Ethiopic({
+  variable: "--font-ethiopic",
+  subsets: ["ethiopic"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -24,7 +30,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", inter.variable, "font-sans", geist.variable)}
+      className={cn(
+        "h-full",
+        "antialiased",
+        inter.variable,
+        "font-sans",
+        geist.variable,
+        notoEthiopic.variable,
+      )}
     >
       <body className="min-h-full flex flex-col">
         <AppShell>{children}</AppShell>
