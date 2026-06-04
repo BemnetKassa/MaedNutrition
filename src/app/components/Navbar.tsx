@@ -4,26 +4,50 @@
 import { useState } from "react";
 import { Zap } from "lucide-react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { LanguageSwitcher } from "@/i18n/LanguageSwitcher";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const { messages: m } = useLanguage();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleNavigation = (href: string) => {
+    setOpen(false);
+    
+    // Check if it's a hash link (starts with #)
+    if (href.startsWith("#")) {
+      // If we're not on the homepage, navigate to homepage first
+      if (pathname !== "/") {
+        router.push(`/${href}`);
+      } else {
+        // If we're already on homepage, scroll to the element
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    } else {
+      // Regular navigation
+      router.push(href);
+    }
+  };
 
   const navLinks = [
-    { href: "#transformations", label: m.nav.transformation, onClick: () => setOpen(false) },
-    { href: "#howItWorks", label: m.nav.howItWorks, onClick: () => setOpen(false) },
-    { href: "/online-coaching", label: m.nav.onlineCoaching, onClick: () => setOpen(false) },
-    { href: "/#about", label: m.nav.about, onClick: () => setOpen(false) },
-    { href: "/phone-consultation", label: m.nav.phoneConsultation, onClick: () => setOpen(false) },
+    { href: "#transformations", label: m.nav.transformation },
+    { href: "#howItWorks", label: m.nav.howItWorks },
+    { href: "/online-coaching", label: m.nav.onlineCoaching },
+    { href: "/#about", label: m.nav.about },
+    { href: "/phone-consultation", label: m.nav.phoneConsultation },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-2 md:px-6 pt-3">
       <nav className="relative mx-auto flex h-[78px] max-w-350 items-center justify-between rounded-lg border border-[#e2d8ca] bg-white/90 px-4 md:px-10 py-4 md:py-8 shadow-[0_22px_70px_rgba(26,19,10,0.08)] backdrop-blur-sm">
 
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <div className="w-8 h-8 rounded-lg bg-[#14110d] flex items-center justify-center">
             <span className="text-[#fff8ee] text-xs font-black">SC</span>
           </div>
@@ -34,13 +58,13 @@ export function Navbar() {
 
         <div className="hidden lg:flex items-center gap-8 text-[14px] font-black text-[#6b6257] uppercase tracking-wide">
           {navLinks.map((link) => (
-            <Link
+            <button
               key={link.href}
-              href={link.href}
-              className="hover:text-[#16784a] transition-colors scroll-smooth"
+              onClick={() => handleNavigation(link.href)}
+              className="hover:text-[#16784a] transition-colors scroll-smooth cursor-pointer"
             >
               {link.label}
-            </Link>
+            </button>
           ))}
         </div>
 
@@ -82,14 +106,13 @@ export function Navbar() {
           <div className="absolute left-4 right-4 top-full z-40 mt-3 rounded-lg border border-[#e2d8ca] bg-white/95 backdrop-blur-sm p-4 shadow-lg lg:hidden">
             <div className="flex flex-col gap-3 px-2 py-1">
               {navLinks.map((link) => (
-                <Link
+                <button
                   key={link.href}
-                  href={link.href}
-                  onClick={link.onClick}
-                  className="py-2 text-[14px] font-black text-[#6b6257] uppercase tracking-wide hover:text-[#16784a] transition-colors"
+                  onClick={() => handleNavigation(link.href)}
+                  className="py-2 text-[14px] font-black text-[#6b6257] uppercase tracking-wide hover:text-[#16784a] transition-colors text-left cursor-pointer"
                 >
                   {link.label}
-                </Link>
+                </button>
               ))}
 
               <div className="mt-2 flex flex-col gap-2">
