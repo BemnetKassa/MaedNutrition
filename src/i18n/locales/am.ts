@@ -233,6 +233,117 @@ export const am = {
     planBadge: "90 ቀን የለውጥ እቅድ",
     imgAlt: "የመስመር ላይ ኮቺንግ ስልት",
   },
+  assessment: {
+    stepPrefix: "ደረጃ",
+    stepOf: "ከ",
+    analyzing: "በመተንተን ላይ...",
+    buttons: {
+      next: "ቀጣይ",
+      continue: "ቀጥል",
+      finish: "ጨርስ",
+    },
+    errors: {
+      submitFailed: "መረጃውን በማስተካከል ላይ ስህተት ተከስቷል። እባክዎ እንደገና ይሞክሩ።",
+    },
+    exerciseApi: {
+      beginner: "ጀማሪ",
+      intermediate: "መካከለኛ",
+      advanced: "ከፍተኛ",
+    },
+    goalApi: {
+      loseWeight: "ክብደት መቀነስ",
+      gainWeight: "ክብደት መጨመር",
+    },
+    steps: {
+      personal: {
+        titleBefore: "ከ",
+        titleHighlight: "የግል መረጃዎ ይጀምሩ",
+        description: "እቅድዎን ለማበጠር ማን እንደሆኑ ይንገሩን።",
+        fullName: "ሙሉ ስም",
+        phone: "ስልክ ቁጥር",
+        email: "ኢሜይል (አማራጭ)",
+        telegram: "የቴሌግራም ስም (አማራጭ)",
+        namePlaceholder: "ለምሳ. ሃና ተስፋዬ",
+        phonePlaceholder: "ለምሳ. +251 9XX XXX XXX",
+        emailPlaceholder: "ለምሳ. hana@gmail.com",
+        telegramPlaceholder: "ለምሳ. @sofi_user",
+      },
+      body: {
+        titleBefore: "የአሁኑ",
+        weightHighlight: "ክብደት",
+        andLabel: "እና",
+        heightHighlight: "ቁመትዎ?",
+        description: "ለሰውነትዎ ተገቢ የምግብ እቅድ እንድንገነባ ይረዳናል።",
+        weight: "ክብደት (ኪ.ግ)",
+        height: "ቁመት (ሴ.ሜ)",
+        weightPlaceholder: "ለምሳ. 72",
+        heightPlaceholder: "ለምሳ. 178",
+      },
+      exercise: {
+        titleBefore: "የ",
+        titleHighlight: "ስልት ደረጃዎ?",
+        description: "እንቅስቃሴዎን ለመረዳት እና የተሻለ እቅድ ለመገንባት ይረዳናል።",
+        options: {
+          beginner: {
+            title: "ጀማሪ",
+            subtitle: "ቀላል ስልት በሳምንት 1-2 ቀን",
+          },
+          intermediate: {
+            title: "መካከለኛ",
+            subtitle: "መካከለኛ ስልት በሳምንት 2-4 ቀን",
+          },
+          advanced: {
+            title: "ከፍተኛ",
+            subtitle: "ከፍተኛ ስልት በሳምንት 5-7 ቀን",
+          },
+        },
+      },
+      goal: {
+        titleBefore: "ዋና",
+        titleHighlight: "ዒላማዎ?",
+        description: "ለምርጥ ውጤት የምግብ እቅድዎን ለማበጠር ይረዳናል።",
+        options: {
+          loseWeight: {
+            title: "ክብደት መቀነስ",
+            subtitle: "ስብ ይቃጠል እና ቀላል ይሁኑ",
+          },
+          gainWeight: {
+            title: "ክብደት መጨመር",
+            subtitle: "ጡንቻ ይገንቡ እና ኃይል ይጨምሩ",
+          },
+        },
+      },
+      photo: {
+        titleBefore: "ሰውነትዎን እንተንተን",
+        titleMid: "በ",
+        titleHighlight: "ጥሩ ብርሃን ያለ ፎቶ",
+        description:
+          "ግልጽ የፊት ፎቶ ይውሰዱ። ግምገማዎን ለኒውትሪሽኒስት ለመተንተን የ AI ይረዳል።",
+        takePhoto: "ፎቶ ይውሰዱ",
+        retakePhoto: "እንደገና ይውሰዱ",
+        gallery: "ጋለሪ",
+        changeGallery: "ጋለሪ ቀይር",
+        uploadedAlt: "የተሰቀለ ፎቶ",
+      },
+      payment: {
+        titleBefore: "የክፍያ ደረጃ",
+        titleHighlight: "ደረሰኝ ይስቀሉ",
+        description: "ክፍያውን ያስተላልፉ፣ ከዚያ ደረሰኝዎን ይስቀሉ እቅድዎን እንረጋገጣለን።",
+        cbeAccount: "የ CBE መለያ ቁጥር",
+        accountName: "የመለያ ስም፡ ሶፊ ሰርክል ዳይት",
+        transactionId: "የግብይት መለያ (አማራጭ)",
+        transactionPlaceholder: "ለምሳ. CBE-7F3A92",
+        uploadReceipt: "የክፍያ ደረሰኝ ይስቀሉ",
+        uploadReceiptBtn: "ደረሰኝ ይስቀሉ",
+        receiptUploaded: "ደረሰኝ ተሰቅሏል",
+      },
+      finish: {
+        titleBefore: "ሁሉም ተጠናቋል",
+        titleHighlight: "እቅድዎን ለማግኘት ዝግጁ ነዎት?",
+        description: "ኒውትሪሽኒስታችን እቅድዎን እንዲያዘጋጅ መረጃዎን እንተንተናለን።",
+      },
+    },
+  },
   transformationAi: {
     badge: "የ AI ለውጥ ቅድመ እይታ",
     title: "12 ሳምንት አቅምዎን ይመልከቱ",

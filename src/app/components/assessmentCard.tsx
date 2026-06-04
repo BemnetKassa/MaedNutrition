@@ -2,10 +2,11 @@
 
 "use client";
 
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode } from "react";
 import clsx from "clsx";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/i18n/LanguageProvider";
 
 interface Option {
   title: string;
@@ -43,6 +44,8 @@ export default function AssessmentCard({
   children,
   canProceed,
 }: AssessmentCardProps) {
+  const { messages: m } = useLanguage();
+
   function handleSelect(index: number) {
     if (!options) return;
     onOptionSelect?.(index, options[index]);
@@ -63,7 +66,7 @@ export default function AssessmentCard({
         </div>
 
         <span className="text-sm md:text-base font-semibold text-[#3FAE49] bg-[#3FAE49]/10 px-3 py-1 rounded-full">
-          Step {step} of {totalSteps}
+          {m.assessment.stepPrefix} {step} {m.assessment.stepOf} {totalSteps}
         </span>
       </div>
 

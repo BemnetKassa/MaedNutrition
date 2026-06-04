@@ -266,6 +266,117 @@ export const en = {
     planBadge: "90-day transformation plan",
     imgAlt: "Online coaching workout",
   },
+  assessment: {
+    stepPrefix: "Step",
+    stepOf: "of",
+    analyzing: "Analyzing...",
+    buttons: {
+      next: "Next",
+      continue: "Continue",
+      finish: "Finish",
+    },
+    errors: {
+      submitFailed: "An error occurred while analyzing the data. Please try again.",
+    },
+    exerciseApi: {
+      beginner: "Beginner",
+      intermediate: "Intermediate",
+      advanced: "Advanced",
+    },
+    goalApi: {
+      loseWeight: "Lose Weight",
+      gainWeight: "Gain Weight",
+    },
+    steps: {
+      personal: {
+        titleBefore: "Let's start with your",
+        titleHighlight: "personal info",
+        description: "Tell us who you are so we can personalize your plan.",
+        fullName: "Full name",
+        phone: "Phone number",
+        email: "Email (optional)",
+        telegram: "Telegram username (optional)",
+        namePlaceholder: "e.g. Hana Tesfaye",
+        phonePlaceholder: "e.g. +251 9XX XXX XXX",
+        emailPlaceholder: "e.g. hana@gmail.com",
+        telegramPlaceholder: "e.g. @sofi_user",
+      },
+      body: {
+        titleBefore: "What's your",
+        weightHighlight: "weight",
+        andLabel: "and",
+        heightHighlight: "height?",
+        description: "This helps us create a meal plan that's right for your body.",
+        weight: "Weight (kg)",
+        height: "Height (cm)",
+        weightPlaceholder: "e.g. 72",
+        heightPlaceholder: "e.g. 178",
+      },
+      exercise: {
+        titleBefore: "What's your",
+        titleHighlight: "exercise level?",
+        description: "This helps us understand your activity and create a better plan.",
+        options: {
+          beginner: {
+            title: "Beginner",
+            subtitle: "Light exercise 1-2 days per week",
+          },
+          intermediate: {
+            title: "Intermediate",
+            subtitle: "Moderate exercise 2-4 days per week",
+          },
+          advanced: {
+            title: "Advanced",
+            subtitle: "Intense exercise 5-7 days per week",
+          },
+        },
+      },
+      goal: {
+        titleBefore: "What's your",
+        titleHighlight: "main goal?",
+        description: "This helps us personalize your meal plan for the best results.",
+        options: {
+          loseWeight: {
+            title: "Lose Weight",
+            subtitle: "Burn fat and feel lighter",
+          },
+          gainWeight: {
+            title: "Gain Weight",
+            subtitle: "Build muscle and gain strength",
+          },
+        },
+      },
+      photo: {
+        titleBefore: "Let's analyze your body",
+        titleMid: "with a",
+        titleHighlight: "well-lit photo",
+        description:
+          "Take a clear front-facing photo of your body. This helps our AI analyze your assessment for the nutritionist.",
+        takePhoto: "Take a Photo",
+        retakePhoto: "Retake Photo",
+        gallery: "Gallery",
+        changeGallery: "Change Gallery",
+        uploadedAlt: "Uploaded user photo",
+      },
+      payment: {
+        titleBefore: "Payment step",
+        titleHighlight: "upload your receipt",
+        description: "Transfer the payment, then upload your receipt so we can confirm your plan.",
+        cbeAccount: "CBE Account Number",
+        accountName: "Account Name: Sofi Circle Diet",
+        transactionId: "Transaction ID (optional)",
+        transactionPlaceholder: "e.g. CBE-7F3A92",
+        uploadReceipt: "Upload payment receipt",
+        uploadReceiptBtn: "Upload receipt",
+        receiptUploaded: "Receipt uploaded",
+      },
+      finish: {
+        titleBefore: "You're all set",
+        titleHighlight: "Ready to get your plan?",
+        description: "We'll analyze your info for our nutritionist to prepare your plan.",
+      },
+    },
+  },
   transformationAi: {
     badge: "AI TRANSFORMATION PREVIEW",
     title: "See your 12-week potential",
