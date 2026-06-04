@@ -233,6 +233,63 @@ export const am = {
     planBadge: "90 ቀን የለውጥ እቅድ",
     imgAlt: "የመስመር ላይ ኮቺንግ ስልት",
   },
+  transformationAi: {
+    badge: "የ AI ለውጥ ቅድመ እይታ",
+    title: "12 ሳምንት አቅምዎን ይመልከቱ",
+    subtitle:
+      "ግልጽ የፊት ፎቶ ይስቀሉ። በቆይታ ኒውትሪሽን እና ስልት እድገትዎ እንዴት ሊመስል እንደሚችል እውነተኛ ቅድመ እይታ እንፈጥራለን።",
+    stats: {
+      planLength: "የእቅድ ርዝመት",
+      photoType: "የፎቶ አይነት",
+      output: "ውጤት",
+      weeks12: "12 ሳምንት",
+      frontFacing: "የፊት ፎቶ",
+      aiPreview: "የ AI ቅድመ እይታ",
+    },
+    form: {
+      goal: "ዒላማ",
+      timeframe: "ጊዜ",
+      notes: "ማስታወሻ (አማራጭ)",
+      notesPlaceholder: "ለምሳ. ጭንቅላት፣ ቁመት ወይም ኃይል ላይ ትኩር",
+      uploadPhoto: "ፎቶ ይስቀሉ",
+      uploadHint: "ምርጥ ውጤት፡ ጥሩ ብርሃን፣ ተራ የዳራር።",
+      submitLoading: "ቅድመ እይታ በመፍጠር ላይ...",
+      submit: "የ AI ቅድመ እይታ ይፍጠሩ",
+      disclaimer:
+        "ፎቶዎ ለዚህ ቅድመ እይታ ብቻ ይውላል። ውጤቶች ሲሙሌት ናቸው እና ሊለያዩ ይችላሉ።",
+    },
+    goals: {
+      leanToned: "ቀጥተኛ እና ተጣምሮ",
+      fatLoss: "የስብ መቀነስ",
+      muscleDefinition: "የጡንቻ ቅርጽ",
+      balancedRecomposition: "ሚዛናዊ የሰውነት ለውጥ",
+    },
+    preview: {
+      original: "የመጀመሪያ",
+      transformationPreview: "የለውጥ ቅድመ እይታ",
+      aiPreviewLabel: "የ AI ቅድመ እይታ",
+      uploadToPreview: "ለመመልከት ፎቶ ይስቀሉ",
+      willAppearHere: "ቅድመ እይታ እዚህ ይታያል",
+      download: "አውርድ",
+      uploadedAlt: "የተሰቀለ ፎቶ",
+      resultAlt: "የ AI ለውጥ ቅድመ እይታ",
+    },
+    tips: {
+      title: "ለምርጥ ውጤት ምክሮች",
+      items: [
+        "በብርሃን የተሞላ የፊት ፎቶ ይጠቀሙ።",
+        "ተራ ዳራር እና የተረጋገጠ ቁመት ይጠብቁ።",
+        "ለትክክለኛ ቅርጽ ተጣምሮ ልብስ ይልብሱ።",
+      ],
+    },
+    errors: {
+      invalidImage: "ትክክለኛ የምስል ፋይል ይስቀሉ።",
+      imageTooLarge: "ምስሉ ከ 8MB በታች መሆን አለበት።",
+      uploadRequired: "ቅድመ እይታ ለመፍጠር ፎቶ ይስቀሉ።",
+      generateFailed: "ቅድመ እይታ መፍጠር አልተሳካም።",
+      generic: "አንድ ነገር ተሳስቷል።",
+    },
+  },
   phoneConsultation: {
     badge: "የስልክ ምክር",
     title: "ከኮቹ ጋር ይነጋገሩ እና",

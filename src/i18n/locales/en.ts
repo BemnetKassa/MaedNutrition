@@ -266,6 +266,63 @@ export const en = {
     planBadge: "90-day transformation plan",
     imgAlt: "Online coaching workout",
   },
+  transformationAi: {
+    badge: "AI TRANSFORMATION PREVIEW",
+    title: "See your 12-week potential",
+    subtitle:
+      "Upload a clear front-facing photo. We will generate a realistic preview of what your progress can look like with consistent nutrition and training.",
+    stats: {
+      planLength: "Plan length",
+      photoType: "Photo type",
+      output: "Output",
+      weeks12: "12 weeks",
+      frontFacing: "Front-facing",
+      aiPreview: "AI preview",
+    },
+    form: {
+      goal: "Goal",
+      timeframe: "Timeframe",
+      notes: "Notes (optional)",
+      notesPlaceholder: "e.g. Focus on waist, posture, or energy",
+      uploadPhoto: "Upload photo",
+      uploadHint: "Best results: good lighting, neutral background.",
+      submitLoading: "Generating preview...",
+      submit: "Generate AI Preview",
+      disclaimer:
+        "Your photo is used only to create this preview. Results are simulated and may vary.",
+    },
+    goals: {
+      leanToned: "Lean & toned",
+      fatLoss: "Fat loss",
+      muscleDefinition: "Muscle definition",
+      balancedRecomposition: "Balanced recomposition",
+    },
+    preview: {
+      original: "Original",
+      transformationPreview: "Transformation Preview",
+      aiPreviewLabel: "AI Preview",
+      uploadToPreview: "Upload a photo to preview",
+      willAppearHere: "Preview will appear here",
+      download: "Download",
+      uploadedAlt: "Uploaded preview",
+      resultAlt: "AI transformation preview",
+    },
+    tips: {
+      title: "Tips for best results",
+      items: [
+        "Use a well-lit, front-facing photo.",
+        "Keep a neutral background and relaxed posture.",
+        "Wear fitted clothing for accurate proportions.",
+      ],
+    },
+    errors: {
+      invalidImage: "Please upload a valid image file.",
+      imageTooLarge: "Image must be under 8MB.",
+      uploadRequired: "Upload a photo to generate your preview.",
+      generateFailed: "Failed to generate preview.",
+      generic: "Something went wrong.",
+    },
+  },
   phoneConsultation: {
     badge: "Phone Consultation",
     title: "Speak with a coach and",
