@@ -32,18 +32,18 @@ export function Hero() {
 
       <div className="absolute inset-0 z-0 md:hidden">
         <Image
-          src="/pictures/sofiMain.png"
+          src="/pictures/Group 9.webp"
           alt={m.hero.heroBgAlt}
           fill
           priority
-          sizes="(max-width: 767px) 100vw, 50vw"
+          sizes="(max-width: 757px) 100vw, 50vw"
           className="object-contain object-top opacity-40"
         />
       </div>
 
       <div className="relative z-10 mx-auto max-w-362.5 px-4 md:px-6 md:pr-0">
 
-        <div className="grid items-center gap-6 grid-cols-1 md:grid-cols-2">
+        <div className="grid items-center gap-6 grid-cols-1 md:grid-cols-2 py-15">
 
           <motion.div
             initial={{ opacity: 0, y: 35 }}
@@ -68,7 +68,7 @@ export function Hero() {
               <h1 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[48px] leading-[0.95] font-black tracking-tight text-[#14110d]">
                 {m.hero.titleLine1}
                 <br />
-                <span className="bg-gradient-to-r from-[#16784a] to-[#0c4d32] bg-clip-text text-transparent">
+                <span className="bg-[#00A619] bg-clip-text text-transparent">
                   {m.hero.titleLine2}
                 </span>
               </h1>
@@ -99,7 +99,7 @@ export function Hero() {
                 <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 400 }}>
                   <Link
                     href="/assessment"
-                    className="mt-5 flex h-11 w-full items-center justify-center rounded-lg bg-[#16784a] text-white shadow-[0_14px_28px_rgba(22,120,74,0.25)] hover:bg-[#0c4d32] transition-all text-[14px] font-black relative overflow-hidden group/btn"
+                    className="mt-5 flex h-11 w-full items-center justify-center rounded-lg bg-[#00A619] text-white shadow-[0_14px_28px_rgba(22,120,74,0.25)] hover:bg-[#0c4d32] transition-all text-[14px] font-black relative overflow-hidden group/btn"
                   >
                     <span className="relative z-10">{m.hero.card1Cta}</span>
                     <ArrowRight className="absolute right-4 w-4 h-4 opacity-0 group-hover/btn:opacity-100 group-hover/btn:translate-x-1 transition-all" />
@@ -211,13 +211,13 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="relative hidden h-full md:block"
           >
-            <div className="relative flex h-105 w-full items-center justify-center md:h-140 lg:h-190">
+            <div className="relative flex h-80 w-full items-center justify-center md:h-120 lg:h-150 mt-10">
               <Image
-                src="/pictures/sofiMain.png"
+                src="/pictures/Group 9.webp"
                 alt={m.hero.heroAlt}
                 fill
                 priority
-                sizes="(max-width: 767px) 100vw, 50vw"
+                sizes="(max-width: 757px) 100vw, 50vw"
                 className="object-contain object-center"
               />
             </div>

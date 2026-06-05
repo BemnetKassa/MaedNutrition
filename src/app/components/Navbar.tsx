@@ -95,7 +95,7 @@ export function Navbar() {
             href="https://maednutritions.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-11 items-center justify-center rounded-lg bg-[#16784a] px-3 sm:px-6 text-[14px] font-black text-white shadow-[0_14px_28px_rgba(22,120,74,0.25)] transition-all hover:bg-[#0c4d32]"
+            className="flex h-11 items-center justify-center rounded-lg bg-[#00A619] px-3 sm:px-6 text-[14px] font-black text-white shadow-[0_14px_28px_rgba(22,120,74,0.25)] transition-all hover:bg-[#0c4d32]"
           >
             <Zap className="mr-2 h-4 w-4 hidden sm:block" />
             <span className="max-w-[100px] truncate sm:max-w-none">{m.common.maedNutrition}</span>
@@ -123,7 +123,7 @@ export function Navbar() {
                   href="https://maednutritions.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 w-full items-center justify-center rounded-lg bg-[#16784a] px-6 text-[14px] font-black text-white shadow-[0_14px_28px_rgba(22,120,74,0.25)] transition-all hover:bg-[#0c4d32]"
+                  className="flex h-11 w-full items-center justify-center rounded-lg bg-[#00A619] px-6 text-[14px] font-black text-white shadow-[0_14px_28px_rgba(22,120,74,0.25)] transition-all hover:bg-[#00A619]"
                   onClick={() => setOpen(false)}
                 >
                   <Zap className="mr-2 h-4 w-4" />
