@@ -82,7 +82,7 @@ const JoinCommunity = () => {
               className="mt-8"
             >
               <Button 
-                className="bg-[#16784a] hover:bg-[#0c4d32] text-white px-8 py-6 text-lg font-black shadow-[0_14px_28px_rgba(22,120,74,0.25)] rounded-lg w-full sm:w-auto"
+                className="bg-[#00A619] hover:bg-[#0c4d32] text-white px-8 py-6 text-lg font-black shadow-[0_14px_28px_rgba(22,120,74,0.25)] rounded-lg w-full sm:w-auto"
                 asChild
               >
                 <a href={telegramLink} target="_blank" rel="noopener noreferrer">
