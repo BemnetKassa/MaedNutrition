@@ -41,8 +41,8 @@ const JoinCommunity = () => {
           <div className="text-center lg:text-left">
             <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }}>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#14110d]/20 bg-white/60 backdrop-blur-sm mb-6">
-                <Sparkles className="w-3.5 h-3.5 text-[#16784a]" />
-                <span className="text-[11px] font-black uppercase tracking-wider text-[#0f5e3d]">
+                <Sparkles className="w-3.5 h-3.5 text-[#00A619]" />
+                <span className="text-[11px] font-black uppercase tracking-wider text-[#00A619]">
                   {m.joinCommunity.badge}
                 </span>
               </div>
@@ -117,7 +117,7 @@ const JoinCommunity = () => {
                   {[1, 2, 3, 4].map((i) => (
                     <div
                       key={i}
-                      className="w-8 h-8 rounded-full bg-gradient-to-br from-[#16784a] to-[#0c4d32] border-2 border-white"
+                      className="w-8 h-8 rounded-full bg-gradient-to-br from-[#00A619] to-[#0c4d32] border-2 border-white"
                     />
                   ))}
                 </div>
@@ -158,16 +158,16 @@ const JoinCommunity = () => {
                       <p className="text-[#14110d] font-black text-sm">
                         &quot;{m.joinCommunity.quote}&quot;
                       </p>
-                      <p className="text-[#16784a] text-xs mt-1 font-semibold">{m.joinCommunity.quoteAuthor}</p>
+                      <p className="text-[#00A619] text-xs mt-1 font-semibold">{m.joinCommunity.quoteAuthor}</p>
                     </div>
-                    <Play className="w-8 h-8 text-[#16784a] opacity-75" />
+                    <Play className="w-8 h-8 text-[#00A619] opacity-75" />
                   </div>
                 </div>
               </div>
 
               <div className="absolute top-4 right-4 z-20">
                 <div className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full border border-[#e2d8ca]">
-                  <span className="text-[#0c4d32] text-xs font-black">{m.joinCommunity.liveCommunity}</span>
+                  <span className="text-[#00A619] text-xs font-black">{m.joinCommunity.liveCommunity}</span>
                 </div>
               </div>
             </div>
@@ -180,7 +180,7 @@ const JoinCommunity = () => {
             >
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 rounded-lg bg-[#16784a]/10 flex items-center justify-center">
-                  <MessageCircle className="w-4 h-4 text-[#16784a]" />
+                  <MessageCircle className="w-4 h-4 text-[#00A619]" />
                 </div>
                 <div>
                   <p className="text-[#14110d] font-black text-sm">10k+</p>

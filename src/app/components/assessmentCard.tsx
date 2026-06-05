@@ -126,7 +126,7 @@ export default function AssessmentCard({
                   >
                     <div className="flex sm:items-center gap-4 flex-col sm:flex-row">
                       {option.icon && (
-                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#ECFAEE] text-[#3FAE49] flex-shrink-0">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#ECFAEE] text-[#00A619] flex-shrink-0">
                           {option.icon}
                         </div>
                       )}
@@ -181,7 +181,7 @@ export default function AssessmentCard({
           disabled={! (canProceed ?? true)}
           className={clsx(
             "flex h-14 flex-1 items-center justify-center gap-2 rounded-xl text-lg font-semibold transition-colors",
-            canProceed ? "bg-[#3FAE49] text-white hover:bg-[#36963f] shadow-md" : "bg-[#A7D6A7] text-white/80 pointer-events-none opacity-60"
+            canProceed ? "bg-[#00A619] text-white hover:bg-[#0c4d32] shadow-md" : "bg-[#A7D6A7] text-white/80 pointer-events-none opacity-60"
           )}
         >
           {buttonText}

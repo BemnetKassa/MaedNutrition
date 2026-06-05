@@ -31,7 +31,7 @@ export function Benefits() {
           {/* Benefit 2 */}
           <div className="flex items-center gap-4 flex-1 justify-center">
             <div className="shrink-0 flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF7EC]">
-              <Target className="h-6 w-6 text-[#3FAE49]" />
+              <Target className="h-6 w-6 text-[#00A619]" />
             </div>
             <div>
               <h4 className="text-base font-bold text-[#111111]">Goal-Based Targets</h4>
@@ -44,7 +44,7 @@ export function Benefits() {
           {/* Benefit 3 */}
           <div className="flex items-center gap-4 flex-1 justify-center">
             <div className="shrink-0 flex h-14 w-14 items-center justify-center rounded-full bg-[#EAF7EC]">
-              <LineChart className="h-6 w-6 text-[#3FAE49]" />
+              <LineChart className="h-6 w-6 text-[#00A619]" />
             </div>
             <div>
               <h4 className="text-base font-bold text-[#111111]">Progress Tracking</h4>

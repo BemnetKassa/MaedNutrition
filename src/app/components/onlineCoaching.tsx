@@ -30,7 +30,7 @@ const OnlineCoaching = () => {
           className="space-y-6"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#14110d]/20 bg-white/60 backdrop-blur-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#16784a]" />
+            <Sparkles className="w-3.5 h-3.5 text-[#00A619]" />
             <span className="text-[11px] font-black uppercase tracking-wider text-[#0c4d32]">
               {m.coaching.badge}
             </span>
@@ -39,7 +39,7 @@ const OnlineCoaching = () => {
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-[#14110d]">
             {m.coaching.title}
             <br />
-            <span className="text-[#16784a]">{m.coaching.titleHighlight}</span>
+            <span className="text-[#00A619]">{m.coaching.titleHighlight}</span>
           </h2>
 
           <p className="max-w-2xl text-base md:text-lg leading-relaxed text-[#6b6257]">
@@ -68,7 +68,7 @@ const OnlineCoaching = () => {
           <div className="flex flex-wrap items-center gap-4 pt-4">
             <Link
               href="/assessment"
-              className="inline-flex items-center gap-2 rounded-lg bg-[#16784a] px-6 py-3 text-sm font-black text-white transition-all hover:bg-[#0c4d32] shadow-[0_14px_28px_rgba(22,120,74,0.25)]"
+              className="inline-flex items-center gap-2 rounded-lg bg-[#00A619] px-6 py-3 text-sm font-black text-white transition-all hover:bg-[#0c4d32] shadow-[0_14px_28px_rgba(22,120,74,0.25)]"
             >
               {m.coaching.startCoaching}
               <ArrowRight className="h-4 w-4" />
@@ -76,7 +76,7 @@ const OnlineCoaching = () => {
 
             <Link
               href="#howItWorks"
-              className="inline-flex items-center gap-2 rounded-lg border border-[#e2d8ca] px-6 py-3 text-sm font-black text-[#14110d] transition-all hover:border-[#16784a] hover:text-[#16784a]"
+              className="inline-flex items-center gap-2 rounded-lg border border-[#e2d8ca] px-6 py-3 text-sm font-black text-[#14110d] transition-all hover:border-[#00A619] hover:text-[#00A619]"
             >
               {m.coaching.seeStructure}
             </Link>
@@ -87,7 +87,7 @@ const OnlineCoaching = () => {
               {[1, 2, 3, 4].map((i) => (
                 <div
                   key={i}
-                  className="w-8 h-8 rounded-full bg-gradient-to-br from-[#16784a] to-[#0c4d32] border-2 border-white"
+                  className="w-8 h-8 rounded-full bg-gradient-to-br from-[#00A619] to-[#0c4d32] border-2 border-white"
                 />
               ))}
             </div>
@@ -120,7 +120,7 @@ const OnlineCoaching = () => {
             </div>
             <div className="absolute -bottom-4 -left-4 bg-white rounded-lg px-4 py-2 border border-[#e2d8ca] shadow-md">
               <div className="flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-[#16784a]" />
+                <TrendingUp className="w-4 h-4 text-[#00A619]" />
                 <p className="text-xs font-black text-[#14110d]">{m.coaching.planBadge}</p>
               </div>
             </div>
