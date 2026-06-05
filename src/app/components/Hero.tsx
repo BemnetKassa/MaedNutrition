@@ -60,7 +60,7 @@ export function Hero() {
                 transition={{ duration: 0.5 }}
               >
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#14110d]/20 bg-white/60 backdrop-blur-sm mb-6">
-                  <Sparkles className="w-3.5 h-3.5 text-[#16784a]" />
+                  <Sparkles className="w-3.5 h-3.5 text-[#00A619]" />
                   <span className="text-[11px] font-black uppercase tracking-wider text-[#0c4d32]">{m.hero.badge}</span>
                 </div>
               </motion.div>
@@ -85,7 +85,7 @@ export function Hero() {
                 className="group rounded-lg border border-[#e2d8ca] bg-white p-6 shadow-[0_22px_70px_rgba(26,19,10,0.14)] hover:shadow-[0_25px_50px_rgba(22,120,74,0.15)] transition-all duration-300"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm group-hover:scale-110 transition-transform duration-300">
-                  <ClipboardList className="h-6 w-6 text-[#16784a]" />
+                  <ClipboardList className="h-6 w-6 text-[#00A619]" />
                 </div>
 
                 <h3 className="mt-5 text-[18px] font-extrabold leading-tight text-[#14110d]">
@@ -113,7 +113,7 @@ export function Hero() {
                 className="group rounded-lg border border-[#e2d8ca] bg-white p-6 shadow-[0_22px_70px_rgba(26,19,10,0.14)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)] transition-all duration-300"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm group-hover:scale-110 transition-transform duration-300">
-                  <Zap className="h-6 w-6 text-[#16784a]" />
+                  <Zap className="h-6 w-6 text-[#00A619]" />
                 </div>
 
                 <h3 className="mt-5 text-[18px] font-extrabold leading-tight text-[#14110d]">
@@ -148,7 +148,7 @@ export function Hero() {
                   transition={{ duration: 0.5 }}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm group-hover:shadow-md transition-all"
                 >
-                  <Leaf className="h-5 w-5 text-[#16784a]" />
+                  <Leaf className="h-5 w-5 text-[#00A619]" />
                 </motion.div>
 
                 <div>
@@ -169,7 +169,7 @@ export function Hero() {
                   transition={{ duration: 0.5 }}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm group-hover:shadow-md transition-all"
                 >
-                  <Target className="h-5 w-5 text-[#16784a]" />
+                  <Target className="h-5 w-5 text-[#00A619]" />
                 </motion.div>
 
                 <div>
@@ -190,7 +190,7 @@ export function Hero() {
                   transition={{ duration: 0.5 }}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm group-hover:shadow-md transition-all"
                 >
-                  <CalendarDays className="h-5 w-5 text-[#16784a]" />
+                  <CalendarDays className="h-5 w-5 text-[#00A619]" />
                 </motion.div>
 
                 <div>
