@@ -138,7 +138,7 @@ export default function AssessmentPage() {
           <input
             type="text"
             placeholder={s.personal.namePlaceholder}
-            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#3FAE49] bg-[#FAFAFA] text-lg transition-all"
+            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#00A619] bg-[#FAFAFA] text-lg transition-all"
             onChange={(e) => {
               setAnswers((prev) => {
                 const copy = [...prev];
@@ -154,7 +154,7 @@ export default function AssessmentPage() {
           <input
             type="tel"
             placeholder={s.personal.phonePlaceholder}
-            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#3FAE49] bg-[#FAFAFA] text-lg transition-all"
+            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#00A619] bg-[#FAFAFA] text-lg transition-all"
             onChange={(e) => {
               setAnswers((prev) => {
                 const copy = [...prev];
@@ -170,7 +170,7 @@ export default function AssessmentPage() {
           <input
             type="email"
             placeholder={s.personal.emailPlaceholder}
-            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#3FAE49] bg-[#FAFAFA] text-lg transition-all"
+            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#00A619] bg-[#FAFAFA] text-lg transition-all"
             onChange={(e) => {
               setAnswers((prev) => {
                 const copy = [...prev];
@@ -186,7 +186,7 @@ export default function AssessmentPage() {
           <input
             type="text"
             placeholder={s.personal.telegramPlaceholder}
-            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#3FAE49] bg-[#FAFAFA] text-lg transition-all"
+            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#00A619] bg-[#FAFAFA] text-lg transition-all"
             onChange={(e) => {
               setAnswers((prev) => {
                 const copy = [...prev];
@@ -207,7 +207,7 @@ export default function AssessmentPage() {
           <input
             type="number"
             placeholder={s.body.weightPlaceholder}
-            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#3FAE49] bg-[#FAFAFA] text-lg transition-all"
+            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#00A619] bg-[#FAFAFA] text-lg transition-all"
             onChange={(e) => {
               setAnswers((prev) => {
                 const copy = [...prev];
@@ -223,7 +223,7 @@ export default function AssessmentPage() {
           <input
             type="number"
             placeholder={s.body.heightPlaceholder}
-            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#3FAE49] bg-[#FAFAFA] text-lg transition-all"
+            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#00A619] bg-[#FAFAFA] text-lg transition-all"
             onChange={(e) => {
               setAnswers((prev) => {
                 const copy = [...prev];
@@ -242,7 +242,7 @@ export default function AssessmentPage() {
 
     const photoStep = (
       <div className="w-full">
-        <div className="overflow-hidden rounded-[28px] border-2 border-[#3FAE49]">
+        <div className="overflow-hidden rounded-[28px] border-2 border-[#00A619]">
           <div className="relative h-64 md:h-96 lg:h-110 w-full bg-gray-100 flex items-center justify-center overflow-hidden">
             {hasPhoto ? (
               <img
@@ -253,15 +253,15 @@ export default function AssessmentPage() {
             ) : (
               <>
                 <Camera className="h-16 w-16 text-gray-300" />
-                <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 border-l-2 border-dashed border-[#3FAE49]" />
-                <div className="absolute left-1/2 top-[46%] h-0.5 w-[60%] -translate-x-1/2 border-t-2 border-dashed border-[#3FAE49]" />
-                <div className="absolute left-1/2 top-[72%] h-0.5 w-[60%] -translate-x-1/2 border-t-2 border-dashed border-[#3FAE49]" />
+                <div className="absolute left-1/2 top-0 h-full w-0.5 -translate-x-1/2 border-l-2 border-dashed border-[#00A619]" />
+                <div className="absolute left-1/2 top-[46%] h-0.5 w-[60%] -translate-x-1/2 border-t-2 border-dashed border-[#00A619]" />
+                <div className="absolute left-1/2 top-[72%] h-0.5 w-[60%] -translate-x-1/2 border-t-2 border-dashed border-[#00A619]" />
               </>
             )}
           </div>
         </div>
         <div className="mt-6 md:mt-8 flex flex-col sm:flex-row gap-4">
-          <label className="flex h-14 md:h-16 flex-1 items-center justify-center gap-3 rounded-2xl bg-[#3FAE49] text-base md:text-[20px] font-semibold text-white transition hover:bg-[#36963f] shadow-sm cursor-pointer">
+          <label className="flex h-14 md:h-16 flex-1 items-center justify-center gap-3 rounded-2xl bg-[#00A619] text-base md:text-[20px] font-semibold text-white transition hover:bg-[#008c15] shadow-sm cursor-pointer">
             <Camera className="h-5 w-5 md:h-6 md:w-6" />
             {hasPhoto ? s.photo.retakePhoto : s.photo.takePhoto}
             <input
@@ -274,7 +274,7 @@ export default function AssessmentPage() {
               }}
             />
           </label>
-          <label className="flex h-14 md:h-16 flex-1 items-center justify-center gap-3 rounded-2xl border border-[#E5E5E5] bg-white text-base md:text-[20px] font-semibold text-[#3FAE49] transition hover:bg-[#F3FBF4] cursor-pointer">
+          <label className="flex h-14 md:h-16 flex-1 items-center justify-center gap-3 rounded-2xl border border-[#E5E5E5] bg-white text-base md:text-[20px] font-semibold text-[#00A619] transition hover:bg-[#F3FBF4] cursor-pointer">
             <Upload className="h-5 w-5 md:h-6 md:w-6" />
             {hasPhoto ? s.photo.changeGallery : s.photo.gallery}
             <input
@@ -304,7 +304,7 @@ export default function AssessmentPage() {
           <input
             type="text"
             placeholder={s.payment.transactionPlaceholder}
-            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#3FAE49] bg-[#FAFAFA] text-lg transition-all"
+            className="w-full px-5 py-4 rounded-xl border border-[#ECECEC] focus:outline-none focus:ring-2 focus:ring-[#00A619] bg-[#FAFAFA] text-lg transition-all"
             onChange={(e) => {
               setAnswers((prev) => {
                 const copy = [...prev];
@@ -317,7 +317,7 @@ export default function AssessmentPage() {
         </div>
         <div className="mt-6">
           <label className="block text-sm font-semibold text-gray-700 mb-2">{s.payment.uploadReceipt}</label>
-          <label className="flex h-14 md:h-16 w-full items-center justify-center gap-3 rounded-2xl border border-[#E5E5E5] bg-white text-base md:text-[20px] font-semibold text-[#3FAE49] transition hover:bg-[#F3FBF4] cursor-pointer">
+          <label className="flex h-14 md:h-16 w-full items-center justify-center gap-3 rounded-2xl border border-[#E5E5E5] bg-white text-base md:text-[20px] font-semibold text-[#00A619] transition hover:bg-[#F3FBF4] cursor-pointer">
             <Upload className="h-5 w-5 md:h-6 md:w-6" />
             {paymentAnswer?.receipt ? s.payment.receiptUploaded : s.payment.uploadReceiptBtn}
             <input

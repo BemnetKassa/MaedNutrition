@@ -258,7 +258,7 @@ export function AboutSection() {
               {/* Floating stat card - repositioned for mobile */}
               <div className="absolute -bottom-4 -left-3 sm:-bottom-5 sm:-left-5 bg-[#14110d]/90 backdrop-blur-sm rounded-lg px-2 sm:px-4 py-1.5 sm:py-2 border border-[#16784a]/30 shadow-lg">
                 <div className="flex items-center gap-1.5 sm:gap-2">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#16784a] flex items-center justify-center">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#00A619] flex items-center justify-center">
                     <Target className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
                   <div>
@@ -291,7 +291,7 @@ export function AboutSection() {
                 className="p-4 sm:p-5 md:p-6 rounded-lg bg-white border border-[#e2d8ca] shadow-[0_12px_38px_rgba(26,19,10,0.04)] hover:shadow-[0_22px_70px_rgba(26,19,10,0.08)] transition-all hover:-translate-y-1"
               >
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-[#16784a]/10 flex items-center justify-center mb-3 sm:mb-4">
-                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#16784a]" />
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#00A619]" />
                 </div>
                 <h3 className="text-base sm:text-lg md:text-xl font-black text-[#14110d] mb-2 sm:mb-3">
                   {value.title}

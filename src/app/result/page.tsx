@@ -40,7 +40,7 @@ export default function ResultPage() {
       <main className="bg-[#FAFAFA] min-h-screen">
         <Navbar />
         <div className="pt-32 pb-16 px-6 lg:px-8 max-w-7xl mx-auto text-center flex flex-col items-center justify-center min-h-[60vh]">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#3FAE49] mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#00A619] mb-4"></div>
           <h1 className="text-3xl font-bold text-[#111111]">Loading Your Results...</h1>
         </div>
       </main>
@@ -52,7 +52,7 @@ export default function ResultPage() {
       <main className="bg-[#FAFAFA] min-h-screen">
         <Navbar />
         <div className="pt-32 pb-16 px-6 lg:px-8 max-w-4xl mx-auto text-center">
-          <span className="inline-block py-1 px-3 rounded-full bg-[#E5F5E6] text-[#3FAE49] text-sm font-semibold mb-4 text-center">
+          <span className="inline-block py-1 px-3 rounded-full bg-[#E5F5E6] text-[#00A619] text-sm font-semibold mb-4 text-center">
             Payment Received
           </span>
           <h1 className="text-3xl md:text-4xl font-bold text-[#111111]">We’re reviewing your payment</h1>

@@ -74,7 +74,7 @@ const Transformations = () => {
 
           <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight text-[#14110d]">
             {m.transformations.title}{" "}
-            <span className="text-[#16784a]">{m.transformations.titleHighlight}</span>
+            <span className="text-[#00A619]">{m.transformations.titleHighlight}</span>
           </h2>
 
           <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-[#47413a]">
@@ -114,7 +114,7 @@ const Transformations = () => {
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <span className="absolute left-2 top-2 rounded-full bg-[#16784a]/90 px-2 py-0.5 text-[10px] font-black text-white">
+                  <span className="absolute left-2 top-2 rounded-full bg-[#00A619]/90 px-2 py-0.5 text-[10px] font-black text-white">
                     {m.common.after}
                   </span>
                 </div>

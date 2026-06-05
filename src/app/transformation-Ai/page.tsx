@@ -146,7 +146,7 @@ export default function TransformationAiPage() {
         <section className="relative mx-auto max-w-6xl px-4 pb-24 md:px-6">
           <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-md border border-green-200 bg-white/80 px-3 py-1 text-xs font-semibold tracking-[0.2em] text-green-700 shadow-sm">
+              <div className="inline-flex items-center gap-2 rounded-md border border-green-200 bg-white/80 px-3 py-1 text-xs font-semibold tracking-[0.2em] text-[#00A619] shadow-sm">
                 {t.badge}
               </div>
               <h1 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">
@@ -227,7 +227,7 @@ export default function TransformationAiPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="h-12 w-full bg-[#3FAE49] text-sm font-semibold text-white transition hover:bg-[#36963f] disabled:opacity-70"
+                  className="h-12 w-full bg-[#00A619] text-sm font-semibold text-white transition hover:bg-[#36963f] disabled:opacity-70"
                 >
                   {loading ? t.form.submitLoading : t.form.submit}
                 </button>
@@ -259,7 +259,7 @@ export default function TransformationAiPage() {
                     <a
                       href={result.imageDataUrl}
                       download="transformation-preview.png"
-                      className="text-xs font-semibold text-green-700"
+                      className="text-xs font-semibold text-[#00A619]"
                     >
                       {t.preview.download}
                     </a>

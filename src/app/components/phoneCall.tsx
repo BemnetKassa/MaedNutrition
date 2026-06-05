@@ -36,8 +36,8 @@ export function PhoneConsultationSection() {
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#14110d]/20 bg-white/60 backdrop-blur-sm">
-              <PhoneCallIcon className="w-3.5 h-3.5 text-[#16784a]" />
-              <span className="text-[11px] font-black uppercase tracking-wider text-[#0c4d32]">
+              <PhoneCallIcon className="w-3.5 h-3.5 text-[#00A619]" />
+              <span className="text-[11px] font-black uppercase tracking-wider text-[#00A619]">
                 {m.phoneConsultation.badge}
               </span>
             </div>
@@ -46,7 +46,7 @@ export function PhoneConsultationSection() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black leading-[1.1] tracking-tight text-[#14110d]">
               {m.phoneConsultation.title}
               <br />
-              <span className="text-[#16784a]">{m.phoneConsultation.titleHighlight}</span>
+              <span className="text-[#00A619]">{m.phoneConsultation.titleHighlight}</span>
             </h2>
 
             {/* Description */}
@@ -58,7 +58,7 @@ export function PhoneConsultationSection() {
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <a
                 href="tel:+251993818388"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#16784a] px-6 py-3 text-sm font-black text-white transition-all hover:bg-[#0c4d32] shadow-[0_14px_28px_rgba(22,120,74,0.25)]"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#00A619] px-6 py-3 text-sm font-black text-white transition-all hover:bg-[#0c4d32] shadow-[0_14px_28px_rgba(22,120,74,0.25)]"
               >
                 <PhoneCallIcon className="w-4 h-4" />
                 +251 993 818 388
@@ -137,7 +137,7 @@ export function PhoneConsultationSection() {
               {/* Floating badge */}
               <div className="absolute -bottom-4 -right-4 bg-white rounded-lg px-4 py-2 border border-[#e2d8ca] shadow-md">
                 <div className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-[#16784a]" />
+                  <Sparkles className="w-4 h-4 text-[#00A619]" />
                   <p className="text-xs font-black text-[#14110d]">Free 15-min consultation</p>
                 </div>
               </div>

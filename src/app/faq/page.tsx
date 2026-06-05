@@ -41,7 +41,7 @@ export default function FAQPage() {
           className="text-center mb-12"
         >
           <div className="inline-block bg-[#3FAE49]/10 py-1 px-3 rounded-full mb-4">
-            <span className="text-[#3FAE49] font-semibold text-sm">FAQ</span>
+            <span className="text-[#00A619] font-semibold text-sm">FAQ</span>
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-[#111111] mb-6 tracking-tight">Frequently Asked Questions</h1>
           <p className="text-lg text-gray-600">Got questions? We've got answers to help you get started.</p>
@@ -63,7 +63,7 @@ export default function FAQPage() {
               >
                 <span className="font-semibold text-[#111111] text-lg pr-4">{faq.question}</span>
                 <ChevronDown
-                  className={`w-5 h-5 flex-shrink-0 text-[#3FAE49] transition-transform duration-300 ${
+                  className={`w-5 h-5 flex-shrink-0 text-[#00A619] transition-transform duration-300 ${
                     openIndex === index ? "transform rotate-180" : ""
                   }`}
                 />
