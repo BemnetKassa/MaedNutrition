@@ -37,7 +37,7 @@ export default function HowItWork() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-12 md:mb-16"
+          className="text-center max-w-6xl mx-auto mb-10 md:mb-14"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#14110d]/20 bg-white/60 backdrop-blur-sm mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#00A619]" />
@@ -46,7 +46,7 @@ export default function HowItWork() {
             </span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#14110d]">
+          <h2 className="text-3xl sm:text-4xl md:text-7xl font-black text-[#14110d]">
             {m.howItWorks.title}
             <span className="block text-[#00A619] mt-1">{m.howItWorks.titleHighlight}</span>
           </h2>

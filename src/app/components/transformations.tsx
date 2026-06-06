@@ -57,27 +57,27 @@ const Transformations = () => {
 
   return (
     <section className="bg-[#fff8ee] py-16 sm:py-24 overflow-hidden" id="transformations">
-      <div className="mx-auto max-w-362.5 px-4 md:px-6">
+      <div className="mx-auto max-w-362 px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-280"
+          
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#14110d]/20 bg-white/60 backdrop-blur-sm">
+          <div className="inline-flex gap-2 px-3 ml-30 py-1 rounded-full border border-[#14110d]/20 bg-white/60 backdrop-blur-sm">
             <Star className="w-3.5 h-3.5 text-[#16784a] fill-[#16784a]/20" />
             <span className="text-[11px] font-black uppercase tracking-wider text-[#0c4d32]">
               {m.transformations.badge}
             </span>
           </div>
 
-          <h2 className="mt-6 text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight text-[#14110d]">
+          <h2 className="text-center pl- mt-6 text-3xl sm:text-4xl md:text-6xl font-black leading-tight tracking-tight text-[#14110d]">
             {m.transformations.title}{" "}
             <span className="text-[#00A619]">{m.transformations.titleHighlight}</span>
           </h2>
 
-          <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-[#47413a]">
+          <p className="text-center mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-[#47413a]">
             {m.transformations.subtitle}
           </p>
         </motion.div>

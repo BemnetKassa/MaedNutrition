@@ -15,7 +15,7 @@ export function PhoneConsultationSection() {
   const { messages: m } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden bg-[#fff8ee] py-16 sm:py-20 md:py-24">
+    <section className="relative overflow-hidden bg-[#fff8ee] py-16 sm:py-20 md:py-20">
       {/* Background gradients matching HTML */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-200px] right-[-200px] h-[500px] w-[500px] rounded-full bg-[#d89a2b]/15 blur-[120px]" />

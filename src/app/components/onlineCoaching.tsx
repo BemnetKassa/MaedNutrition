@@ -13,13 +13,13 @@ const OnlineCoaching = () => {
   const { messages: m } = useLanguage();
 
   return (
-  <section className="relative overflow-hidden bg-[#fff8ee] py-10 md:py-15">
+  <section className="relative overflow-hidden bg-[#fff8ee] py-25 pb-10 md:py-30 md:pb-16" id="coaching">
     <div className="absolute inset-0 -z-10">
       <div className="absolute top-[-200px] left-[-200px] h-[500px] w-[500px] rounded-full bg-[#16784a]/10 blur-[120px]" />
       <div className="absolute bottom-[-200px] right-[-200px] h-[500px] w-[500px] rounded-full bg-[#d89a2b]/15 blur-[140px]" />
     </div>
 
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto max-w-8xl px-4 sm:px-6 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
         
         <motion.div
@@ -27,14 +27,8 @@ const OnlineCoaching = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="space-y-6"
+          className="space-y-7"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#14110d]/20 bg-white/60 backdrop-blur-sm">
-            <Sparkles className="w-3.5 h-3.5 text-[#00A619]" />
-            <span className="text-[11px] font-black uppercase tracking-wider text-[#0c4d32]">
-              {m.coaching.badge}
-            </span>
-          </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight text-[#14110d]">
             {m.coaching.title}
