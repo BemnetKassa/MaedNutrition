@@ -40,7 +40,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-362.5 px-4 md:px-6 md:pr-0">
 
-        <div className="grid items-center gap-6 grid-cols-1 md:grid-cols-2 pt-100 md:pt-20">
+        <div className="grid items-center gap-6 grid-cols-1 md:grid-cols-2 pt-105 md:pt-20">
 
           <motion.div
             initial={{ opacity: 0, y: 35 }}
@@ -50,9 +50,9 @@ export function Hero() {
           >
             <div className="absolute -top-20 -left-20 w-64 h-64 bg-[#d89a2b]/20 rounded-full blur-3xl -z-10" />
 
-            <div className="max-w-full md:max-w-170 mt-3 md:mt-6">
+            <div className="max-w-full md:max-w-180 mt-3 md:mt-6">
 
-              <h1 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[64px] leading-[0.95] font-black tracking-tight text-[#f0f0f0]">
+              <h1 className="text-4xl sm:text-4xl md:text-[50px] lg:text-[58px] leading-[0.95] font-black tracking-tight text-[#f0f0f0]">
                 {m.hero.titleLine1}
                 <br />
                 <span className="md:bg-[#00A619] bg-[#00A619] md:shadow-0 shadow-amber-700 bg-clip-text text-transparent">

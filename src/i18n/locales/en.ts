@@ -17,8 +17,8 @@ export const en = {
   },
   hero: {
     badge: "REAL TRANSFORMATIONS • 90-DAY STRUCTURE",
-    titleLine1: "Eat smart. Train right.",
-    titleLine2: "Transform fast.",
+    titleLine1: "EAT SMART. TRAIN RIGHT.",
+    titleLine2: "TRANSFORM YOUR LIFE.",
     subtitle:
       "Finally, a plan that tells you exactly what to eat, how to train, when to adjust, and how to stay consistent every single week.",
     card1Title: "Start your transformation here",
