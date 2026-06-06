@@ -214,7 +214,7 @@ export function Hero() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative flex h-80 w-full items-center justify-center md:h-120 lg:h-150 mt-5"
+              className="relative flex h-80 w-full items-center justify-center md:h-120 lg:h-150 mt-10"
             >
               <Image
                 src="/pictures/Group 9.png"
