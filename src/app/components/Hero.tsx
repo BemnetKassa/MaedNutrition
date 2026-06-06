@@ -43,7 +43,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-362.5 px-4 md:px-6 md:pr-0">
 
-        <div className="grid items-center gap-6 grid-cols-1 md:grid-cols-2 py-15">
+        <div className="grid items-center gap-6 grid-cols-1 md:grid-cols-2 pt-20">
 
           <motion.div
             initial={{ opacity: 0, y: 35 }}
@@ -53,19 +53,9 @@ export function Hero() {
           >
             <div className="absolute -top-20 -left-20 w-64 h-64 bg-[#d89a2b]/20 rounded-full blur-3xl -z-10" />
 
-            <div className="max-w-full md:max-w-140">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#14110d]/20 bg-white/60 backdrop-blur-sm mb-6">
-                  <Sparkles className="w-3.5 h-3.5 text-[#00A619]" />
-                  <span className="text-[11px] font-black uppercase tracking-wider text-[#0c4d32]">{m.hero.badge}</span>
-                </div>
-              </motion.div>
+            <div className="max-w-full md:max-w-165 mt-6">
 
-              <h1 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[48px] leading-[0.95] font-black tracking-tight text-[#14110d]">
+              <h1 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[62px] leading-[0.95] font-black tracking-tight text-[#14110d]">
                 {m.hero.titleLine1}
                 <br />
                 <span className="bg-[#00A619] bg-clip-text text-transparent">
@@ -73,7 +63,7 @@ export function Hero() {
                 </span>
               </h1>
 
-              <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-[#6b6257] max-w-lg">
+              <p className="mt-5 text-[15px] sm:text-[16px] leading-relaxed text-[#3c3833] max-w-lg">
                 {m.hero.subtitle}
               </p>
             </div>
@@ -140,13 +130,13 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="mt-1 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 rounded-lg bg-white/70 backdrop-blur-sm border border-[#e2d8ca]"
+              className="mt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 rounded-lg bg-white/70 backdrop-blur-sm border border-[#e2d8ca]"
             >
               <div className="flex items-center gap-3 group cursor-pointer">
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm group-hover:shadow-md transition-all"
+                  className="flex h-8 w-8 items-center justify-center rounded-full bg-white shadow-sm group-hover:shadow-md transition-all"
                 >
                   <Leaf className="h-5 w-5 text-[#00A619]" />
                 </motion.div>
@@ -211,7 +201,7 @@ export function Hero() {
             transition={{ duration: 0.8 }}
             className="relative hidden h-full md:block"
           >
-            <div className="relative flex h-80 w-full items-center justify-center md:h-120 lg:h-150 mt-10">
+            <div className="relative flex h-80 w-full items-center justify-center md:h-120 lg:h-150 mt-5">
               <Image
                 src="/pictures/Group 9.webp"
                 alt={m.hero.heroAlt}
