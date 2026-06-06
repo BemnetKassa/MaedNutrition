@@ -20,19 +20,16 @@ export function Hero() {
   const { messages: m } = useLanguage();
 
   return (
-    <section className="relative overflow-hidden bg-[#fff8ee] pt-24 md:pt-0 pb-8">
-      <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 opacity-100"
-          style={{
-            background: "radial-gradient(circle at 90% 10%, rgba(216, 154, 43, 0.18), transparent 34%), linear-gradient(135deg, #fff8ee 0%, #f3eadc 56%, #e8f0e5 100%)"
-          }}
-        />
-      </div>
+    <section
+      className="relative overflow-hidden pt-24 md:pt-0 pb-8 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: "url('/pictures/background.jpg')",
+      }}
+    >
 
       <div className="absolute inset-0 z-0 md:hidden">
         <Image
-          src="/pictures/Group 9.webp"
+          src="/pictures/Group 9.png"
           alt={m.hero.heroBgAlt}
           fill
           priority
@@ -55,7 +52,7 @@ export function Hero() {
 
             <div className="max-w-full md:max-w-165 mt-3 md:mt-6">
 
-              <h1 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[62px] leading-[0.95] font-black tracking-tight text-[#14110d]">
+              <h1 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[62px] leading-[0.95] font-black tracking-tight text-[#f0f0f0]">
                 {m.hero.titleLine1}
                 <br />
                 <span className="bg-[#00A619] bg-clip-text text-transparent">
@@ -130,7 +127,7 @@ export function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="mt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 rounded-lg bg-white/70 backdrop-blur-sm border border-[#e2d8ca]"
+              className="mt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4 p-3 rounded-lg bg-white/70 backdrop-blur-sm border border-[#e2d8ca]"
             >
               <div className="flex items-center gap-3 group cursor-pointer">
                 <motion.div
@@ -196,21 +193,38 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: 80, scale: 0.9 }}
+            animate={{
+              opacity: 1,
+              x: 0,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
             className="relative hidden h-full md:block"
           >
-            <div className="relative flex h-80 w-full items-center justify-center md:h-120 lg:h-150 mt-5">
+            <motion.div
+              animate={{
+                y: [0, -12, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="relative flex h-80 w-full items-center justify-center md:h-120 lg:h-150 mt-5"
+            >
               <Image
-                src="/pictures/Group 9.webp"
+                src="/pictures/Group 9.png"
                 alt={m.hero.heroAlt}
                 fill
                 priority
                 sizes="(max-width: 757px) 100vw, 50vw"
                 className="object-contain object-center"
               />
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
