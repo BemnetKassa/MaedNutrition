@@ -50,9 +50,9 @@ export function Hero() {
           >
             <div className="absolute -top-20 -left-20 w-64 h-64 bg-[#d89a2b]/20 rounded-full blur-3xl -z-10" />
 
-            <div className="max-w-full md:max-w-165 mt-3 md:mt-6">
+            <div className="max-w-full md:max-w-170 mt-3 md:mt-6">
 
-              <h1 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[62px] leading-[0.95] font-black tracking-tight text-[#f0f0f0]">
+              <h1 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[64px] leading-[0.95] font-black tracking-tight text-[#f0f0f0]">
                 {m.hero.titleLine1}
                 <br />
                 <span className="bg-[#00A619] bg-clip-text text-transparent">
@@ -60,12 +60,12 @@ export function Hero() {
                 </span>
               </h1>
 
-              <p className="mt-5 text-[15px] sm:text-[16px] leading-relaxed text-[#3c3833] max-w-lg">
+              <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-[#c5c5c5] max-w-lg">
                 {m.hero.subtitle}
               </p>
             </div>
 
-            <div className="mt-8 grid gap-5 grid-cols-1 md:grid-cols-2 max-w-full md:max-w-160">
+            <div className="mt-6 grid gap-5 grid-cols-1 md:grid-cols-2 max-w-full md:max-w-160">
               <motion.div
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
