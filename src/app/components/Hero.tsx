@@ -34,13 +34,13 @@ export function Hero() {
           fill
           priority
           sizes="(max-width: 757px) 100vw, 50vw"
-          className="object-contain object-top opacity-40"
+          className="object-contain object-top opacity-90 mt-18"
         />
       </div>
 
       <div className="relative z-10 mx-auto max-w-362.5 px-4 md:px-6 md:pr-0">
 
-        <div className="grid items-center gap-6 grid-cols-1 md:grid-cols-2 pt-2 md:pt-20">
+        <div className="grid items-center gap-6 grid-cols-1 md:grid-cols-2 pt-100 md:pt-20">
 
           <motion.div
             initial={{ opacity: 0, y: 35 }}
@@ -55,12 +55,12 @@ export function Hero() {
               <h1 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[64px] leading-[0.95] font-black tracking-tight text-[#f0f0f0]">
                 {m.hero.titleLine1}
                 <br />
-                <span className="bg-[#00A619] bg-clip-text text-transparent">
+                <span className="md:bg-[#00A619] bg-[#00A619] md:shadow-0 shadow-amber-700 bg-clip-text text-transparent">
                   {m.hero.titleLine2}
                 </span>
               </h1>
 
-              <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed text-[#c5c5c5] max-w-lg">
+              <p className="mt-4 text-[15px] sm:text-[16px] leading-relaxed md:text-[#c5c5c5] text-white max-w-lg">
                 {m.hero.subtitle}
               </p>
             </div>
@@ -71,7 +71,7 @@ export function Hero() {
                 transition={{ type: "spring", stiffness: 300 }}
                 className="group rounded-lg border border-[#e2d8ca] bg-white p-6 shadow-[0_22px_70px_rgba(26,19,10,0.14)] hover:shadow-[0_25px_50px_rgba(22,120,74,0.15)] transition-all duration-300"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <div className="flex md:h-12 h-4  md:w-12 w-4 items-center justify-center rounded-full bg-white shadow-sm group-hover:scale-110 transition-transform duration-300">
                   <ClipboardList className="h-6 w-6 text-[#00A619]" />
                 </div>
 
@@ -99,7 +99,7 @@ export function Hero() {
                 transition={{ type: "spring", stiffness: 300 }}
                 className="group rounded-lg border border-[#e2d8ca] bg-white p-6 shadow-[0_22px_70px_rgba(26,19,10,0.14)] hover:shadow-[0_25px_50px_rgba(0,0,0,0.12)] transition-all duration-300"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <div className="flex md:h-12 h-6 md:w-12 w-6 items-center justify-center rounded-full bg-white shadow-sm group-hover:scale-110 transition-transform duration-300">
                   <Zap className="h-6 w-6 text-[#00A619]" />
                 </div>
 
@@ -154,7 +154,7 @@ export function Hero() {
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.5 }}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm group-hover:shadow-md transition-all"
+                  className="flex md:h-12 h-6 md:w-12 w-6 items-center justify-center rounded-full bg-white shadow-sm group-hover:shadow-md transition-all"
                 >
                   <Target className="h-5 w-5 text-[#00A619]" />
                 </motion.div>

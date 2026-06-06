@@ -45,13 +45,13 @@ export function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-2 md:px-6 pt-2">
-      <nav className="relative mx-auto flex h-[70px] max-w-350 items-center justify-between rounded-lg border border-[#e2d8ca] bg-white/90 px-4 md:px-10 py-4 md:py-8 shadow-[0_22px_70px_rgba(26,19,10,0.08)] backdrop-blur-sm">
+      <nav className="relative mx-auto mt-1 flex md:h-[70px] h-[50px] max-w-350 items-center justify-between rounded-lg border border-[#e2d8ca] bg-white/90 px-4 md:px-10 py-4 md:py-8 shadow-[0_22px_70px_rgba(26,19,10,0.08)] backdrop-blur-sm">
 
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <div className="w-8 h-8 rounded-lg bg-[#14110d] flex items-center justify-center">
             <span className="text-[#fff8ee] text-xs font-black">SC</span>
           </div>
-          <span className="text-[16px] font-extrabold tracking-tight text-[#14110d]">
+          <span className="text-[0px] md:text-[16px] font-extrabold tracking-tight text-[#14110d]">
             {m.common.brandName}
           </span>
         </Link>
@@ -95,7 +95,7 @@ export function Navbar() {
             href="https://maednutritions.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-11 items-center justify-center rounded-lg bg-[#00A619] px-3 sm:px-6 text-[14px] font-black text-white shadow-[0_14px_28px_rgba(22,120,74,0.25)] transition-all hover:bg-[#0c4d32]"
+            className="flex md:h-11 h-8 items-center justify-center rounded-lg bg-[#00A619] px-3 sm:px-6 text-[14px] font-black text-white shadow-[0_14px_28px_rgba(22,120,74,0.25)] transition-all hover:bg-[#0c4d32]"
           >
             <Zap className="mr-2 h-4 w-4 hidden sm:block" />
             <span className="max-w-[100px] truncate sm:max-w-none">{m.common.maedNutrition}</span>
@@ -123,7 +123,7 @@ export function Navbar() {
                   href="https://maednutritions.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 w-full items-center justify-center rounded-lg bg-[#00A619] px-6 text-[14px] font-black text-white shadow-[0_14px_28px_rgba(22,120,74,0.25)] transition-all hover:bg-[#00A619]"
+                  className="flex md:h-11 h-8 w-full items-center justify-center rounded-lg bg-[#00A619] px-6 text-[14px] font-black text-white shadow-[0_14px_28px_rgba(22,120,74,0.25)] transition-all hover:bg-[#00A619]"
                   onClick={() => setOpen(false)}
                 >
                   <Zap className="mr-2 h-4 w-4" />
